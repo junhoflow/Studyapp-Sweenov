@@ -10,4 +10,5 @@ class HomeViewModel : ViewModel() {
         value = "스터디모드 들어갈 부분!"
     }
     val text: LiveData<String> = _text
+
 }

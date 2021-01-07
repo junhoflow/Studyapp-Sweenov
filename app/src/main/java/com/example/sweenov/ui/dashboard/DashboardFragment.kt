@@ -26,6 +26,16 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        val buttonView: TextView = root.findViewById(R.id.btn_plus)
+        buttonView.setOnClickListener()
+        {
+            textView.text  = "이제 과제 추가할거야!"
+        }
+
         return root
+
+
     }
+
+
 }
