@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_horizontal" />
 
-
+    
     <!-- 설정 창 꾸미는 곳-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
