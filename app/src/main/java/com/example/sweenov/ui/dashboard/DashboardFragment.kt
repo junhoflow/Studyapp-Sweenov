@@ -3,6 +3,7 @@ package com.example.sweenov.ui.dashboard
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,6 @@ import com.example.sweenov.R
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
-
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -32,11 +32,10 @@ class DashboardFragment : Fragment() {
         val buttonView: TextView = root.findViewById(R.id.btn_plus)
         buttonView.setOnClickListener()
         {
+            textView.text = "Click"
             val intent = Intent(activity, Assignment_Add::class.java)
             startActivity(intent)
         }
         return root
     }
-
-
 }

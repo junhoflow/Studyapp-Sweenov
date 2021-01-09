@@ -8,11 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.CalendarView
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import com.example.sweenov.ui.dashboard.DashboardFragment
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_assignment__add.*
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 import java.util.*
 
 class Assignment_Add : AppCompatActivity() {
@@ -52,10 +56,37 @@ class Assignment_Add : AppCompatActivity() {
 
         }
         btn_add.setOnClickListener{
+            Toast.makeText(this, "과제가 추가되었습니다.",Toast.LENGTH_SHORT).show()
+            val inputSubject = et_date.text.toString()
+            val inputTitle = et_title.text.toString()
+            val inputDate = et_date.text.toString()
+            val inputTime = et_time.text.toString()
 
+            /*
+            val bundle = Bundle(4)
+            bundle.putString("Subject", inputSubject)
+            bundle.putString("Title", inputTitle)
+            bundle.putString("Date", inputDate)
+            bundle.putString("Time", inputTime)
+
+            supportFragmentManager.beginTransaction().replace(
+                R.id.navigation_dashboard,
+                DashboardFragment().apply {
+                    arguments = Bundle().apply {
+                        putString("Subject", inputSubject)
+                        putString("Title", inputTitle)
+                        putString("Date", inputDate)
+                        putString("Time", inputTime)
+                    }
+                }
+            ).commit()
+             */
+
+            //setDataFragment(DashboardFragment(), inputTitle)
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
     }
+
 }
