@@ -7,6 +7,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sweenov.ui.dashboard.ProfileAdapter
+import com.example.sweenov.ui.dashboard.Profiles
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
 
 
     }

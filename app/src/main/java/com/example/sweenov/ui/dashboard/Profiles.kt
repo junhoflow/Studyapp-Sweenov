@@ -1,3 +1,3 @@
 package com.example.sweenov.ui.dashboard
 
-class Profiles( val name: String, val age: String, val job: String)
+class Profiles( var name: Int, var age: String, var job: String)
