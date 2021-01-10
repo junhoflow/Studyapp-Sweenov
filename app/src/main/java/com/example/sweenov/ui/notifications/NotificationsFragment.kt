@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -33,19 +31,17 @@ class NotificationsFragment : Fragment() {
         return root
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        ToggleButton btn = findViewById(R.id.toggleButton2)
-        btn.setOnClickListener(){
-            if(btn.isChecked){
-                Toast.makeText(activity,"알람 ON", Toast.LENGTH_LONG).show()
+        toggleButton2.setOnCheckedChangeListener{_, isChecked ->
+            if(isChecked){
+                Toast.makeText(activity, "알람 ON!", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(activity, "알람 OFF", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "알람 OFF!", Toast.LENGTH_LONG).show()
             }
-
         }
+
+
 
     }
 }
