@@ -3,12 +3,9 @@ package com.example.sweenov.ui.dashboard
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sweenov.R
 import kotlinx.android.synthetic.main.list_item.view.*
-import java.text.FieldPosition
 
 
 class ProfileAdapter(val list:List<Profiles>): RecyclerView.Adapter<Holder>(){
@@ -30,8 +27,9 @@ class ProfileAdapter(val list:List<Profiles>): RecyclerView.Adapter<Holder>(){
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
     fun setItem(profiles: Profiles){
-        itemView.tv_name.text = "${profiles.name}"
-        itemView.tv_job.text = profiles.job
-        itemView.age.text = profiles.age
+        itemView.subname.text = profiles.subjectname
+        itemView.assname.text = profiles.assignmentname
+        itemView.deadline.text = profiles.deadline
+
     }
 }

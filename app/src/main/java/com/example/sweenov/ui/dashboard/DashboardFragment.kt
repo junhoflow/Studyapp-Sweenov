@@ -38,7 +38,7 @@ class DashboardFragment : Fragment() {
     fun loadData() : List<Profiles>{
         val list = mutableListOf<Profiles>()
         for(i in 0..100){
-            val profiles = Profiles(i, "내용 ${i}을 입력합니다.", "currentTime")
+            val profiles = Profiles("i", "내용 ${i}을 입력합니다.", "currentTime")
             list.add(profiles)
         }
         return list

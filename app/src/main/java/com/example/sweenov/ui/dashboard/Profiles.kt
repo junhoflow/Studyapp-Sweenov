@@ -1,3 +1,3 @@
 package com.example.sweenov.ui.dashboard
 
-class Profiles( var name: Int, var age: String, var job: String)
+class Profiles( var subjectname: String, var assignmentname: String, var deadline: String)

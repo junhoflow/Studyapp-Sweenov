@@ -21,12 +21,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/subname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="18dp"
-            android:text="권기욱"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:text="객체지향프로그래밍"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,31 +34,31 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_job"
+            android:id="@+id/deadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
-            android:text="안드로이드 앱 개발자"
+            android:text="210111 12:30"
             android:textColor="#000000"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/age"
-            app:layout_constraintStart_toEndOf="@+id/age"
-            app:layout_constraintTop_toTopOf="@+id/age"
+            app:layout_constraintBottom_toBottomOf="@+id/assname"
+            app:layout_constraintStart_toEndOf="@+id/assname"
+            app:layout_constraintTop_toTopOf="@+id/assname"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/age"
+            android:id="@+id/assname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
-            android:text="22"
+            android:text="for문 연습과제"
             android:textColor="#FF0000"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_name"
-            app:layout_constraintStart_toEndOf="@+id/tv_name"
-            app:layout_constraintTop_toTopOf="@+id/tv_name"
+            app:layout_constraintBottom_toBottomOf="@+id/subname"
+            app:layout_constraintStart_toEndOf="@+id/subname"
+            app:layout_constraintTop_toTopOf="@+id/subname"
             app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
