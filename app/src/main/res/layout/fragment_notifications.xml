@@ -81,75 +81,120 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="알람 형태"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:layout_margin="12dp">
-        </TextView>
+            android:orientation="vertical">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="12dp"
+                android:text="알람 형태"
+                android:textColor="@color/black"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="48dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:src="@drawable/alarm_clock" />
+
+        </LinearLayout>
 
 
-                <CheckBox
-                    android:id="@+id/checkBox1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="30dp"
-                    android:text="과제마감 4시간 전" />
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="30dp"
-                    android:text="과제마감 2시간 전" />
-
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="30dp"
-                    android:text="과제마감 1시간 전" />
-
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="35dp"
-                    android:text="과제마감 30분 전" />
-
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="35dp"
-                    android:text="과제마감 10분 전" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="과제마감 4시간 전" />
 
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="과제마감 2시간 전" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="과제마감 1시간 전" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:text="과제마감 30분 전" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="35dp"
+                android:layout_weight="1"
+                android:text="과제마감 10분 전" />
+
+
+        </LinearLayout>
+
+        <!--    평점 매기기 링크   -->
     </LinearLayout>
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="0.9dp"
         android:background="#BAAAD7" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="right"
+
+            android:text="인하대학교 IGRUS 소속 WEBGRUS 앱 1팀">
+
+        </TextView>
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
