@@ -40,16 +40,21 @@ class NotificationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toggleButton2.setOnCheckedChangeListener{_, isChecked ->
+            val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
+            val vibrationEffect = VibrationEffect.createOneShot(100, 50)
             if(isChecked){
+                vibrator.vibrate(vibrationEffect)
                 Toast.makeText(activity, "알람 ON!", Toast.LENGTH_LONG).show()
             }else{
+                vibrator.vibrate(vibrationEffect)
                 Toast.makeText(activity, "알람 OFF!", Toast.LENGTH_LONG).show()
             }
         }
 
         vibrate_switch.setOnCheckedChangeListener{ _, isChecked ->
             val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
-            val vibrationEffect = VibrationEffect.createOneShot(100, 100)
+            val timings = longArrayOf(0,70,30,70)
+            val vibrationEffect = VibrationEffect.createWaveform(timings,-1)
             if(isChecked){
                 vibrator.vibrate(vibrationEffect)
             } else{
