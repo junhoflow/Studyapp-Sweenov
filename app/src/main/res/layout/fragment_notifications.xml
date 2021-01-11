@@ -11,17 +11,23 @@
     <TextView
         android:id="@+id/text_notifications"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="1sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#BAAAD7" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,9 +41,9 @@
             android:layout_height="match_parent"
             android:textColor="#000000"
             android:gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="12dp"
             android:textSize="18dp"
-            android:text="⏰ 과제 알람을 끄고 클 수 있어요!">
+            android:text="과제 알람">
 
         </TextView>
 
@@ -50,23 +56,36 @@
             android:id="@+id/toggleButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
             android:layout_gravity="right"
-            android:textOn="알람 켜짐"
-            android:textOff="알람 꺼짐"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_background"
+            android:textOff="꺼짐"
+            android:textOn="켜짐" />
     </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#BAAAD7" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
+        <Switch
+            android:id="@+id/vibrate_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:layout_margin="12dp"
+            android:text="진동" />
 
     </LinearLayout>
 
-
-
-    <!-- 설정 창 꾸미는 곳-->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.9dp"
+        android:background="#BAAAD7" />
 
 </LinearLayout>
