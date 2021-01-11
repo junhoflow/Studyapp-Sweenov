@@ -8,7 +8,7 @@ import com.example.sweenov.R
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
-class ProfileAdapter(val list:List<Profiles>): RecyclerView.Adapter<Holder>(){
+class ProfileAdapter(val list:ArrayList<Profiles>): RecyclerView.Adapter<Holder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
         return Holder(view)
