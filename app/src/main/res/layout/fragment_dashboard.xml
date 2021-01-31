@@ -10,100 +10,108 @@
         android:id="@+id/thu"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
-        android:text="THU"
+
+        android:background="@drawable/thu"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/wed"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/mon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="9dp"
-        android:text="MO"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <Button
         android:id="@+id/tue"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
-        android:text="TUE"
+        android:background="@drawable/tue"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/mon"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/fri"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="9dp"
-        android:text="FRI"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toEndOf="@+id/thu"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/sat"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="9dp"
-        android:text="SAT"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toEndOf="@+id/fri"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/sun"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="9dp"
-        android:text="SUN"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toEndOf="@+id/sat"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_profile"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sun" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <Button
         android:id="@+id/wed"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
-        android:text="WED"
+        android:background="@drawable/wed"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/tue"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/fri"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/fri"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/thu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/sat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/sat"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/fri"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/sun"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sun"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/sat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/mon"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_profile"
+        android:layout_width="400dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:background="#9E62DA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sun" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
