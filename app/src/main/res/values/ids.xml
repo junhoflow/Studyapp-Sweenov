@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="checkBox1" type="id" />
+    <item name="checkBox2" type="id" />
+    <item name="checkBox3" type="id" />
+    <item name="checkBox4" type="id" />
+    <item name="checkBox5" type="id" />
+</resources>
