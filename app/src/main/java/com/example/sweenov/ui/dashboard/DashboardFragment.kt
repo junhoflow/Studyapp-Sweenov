@@ -91,6 +91,7 @@ class DashboardFragment : Fragment() {
 
         val btn1 = root.sun
         btn1.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.sun.text.toString()
             val adapter = ProfileAdapter(profileList1)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -98,6 +99,7 @@ class DashboardFragment : Fragment() {
         })
         val btn2 = root.mon
         btn2.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.mon.text.toString()
             val adapter = ProfileAdapter(profileList2)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -105,6 +107,7 @@ class DashboardFragment : Fragment() {
         })
         val btn3 = root.tue
         btn3.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.tue.text.toString()
             val adapter = ProfileAdapter(profileList3)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -112,6 +115,7 @@ class DashboardFragment : Fragment() {
         })
         val btn4 = root.wed
         btn4.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.wed.text.toString()
             val adapter = ProfileAdapter(profileList4)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -119,6 +123,7 @@ class DashboardFragment : Fragment() {
         })
         val btn5 = root.thu
         btn5.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.thu.text.toString()
             val adapter = ProfileAdapter(profileList5)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -127,6 +132,7 @@ class DashboardFragment : Fragment() {
 
         val btn6 = root.fri
         btn6.setOnClickListener(View.OnClickListener {
+            root.TodayINFO.text = root.fri.text.toString()
             val adapter = ProfileAdapter(profileList6)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -135,7 +141,7 @@ class DashboardFragment : Fragment() {
 
         val btn7 = root.sat
         btn7.setOnClickListener(View.OnClickListener {
-
+            root.TodayINFO.text = root.sat.text.toString()
             val adapter = ProfileAdapter(profileList7)
             root.rv_profile.adapter = adapter
             root.rv_profile.layoutManager= LinearLayoutManager(context)
