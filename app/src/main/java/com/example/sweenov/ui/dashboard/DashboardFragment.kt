@@ -24,8 +24,6 @@ class DashboardFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         //dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
-
-
        //val textView: TextView = root.findViewById(R.id.text_dashboard)
         //dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
         //    textView.text = it
@@ -158,15 +156,20 @@ class DashboardFragment : Fragment() {
 
 
 
-
-
-
         return root
 
 
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btn_plus.setOnClickListener()
+        {
+            val action = DashboardFragmentDirections.actionNavigationDashboardToAdditionFragment()
+            Navigation.findNavController(view).navigate(action)
+        }
+    }
 
 
      fun loadData2(): List<Profiles> {
@@ -185,14 +188,7 @@ class DashboardFragment : Fragment() {
     fun loadData() : List<Profiles>{
         val list = mutableListOf<Profiles>()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        btn_plus.setOnClickListener()
-        {
-            val action = DashboardFragmentDirections.actionNavigationDashboardToAdditionFragment()
-            Navigation.findNavController(view).navigate(action)
-        }
-    }
+
 
             val profiles = Profiles("객체지향프로그래밍", "for문 연습문제.", "currentTime")
             val profiles2 = Profiles("자바", "while문 연습문제", "210101 10:19")
