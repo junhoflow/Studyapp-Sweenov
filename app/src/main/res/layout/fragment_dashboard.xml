@@ -6,21 +6,123 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/thu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+
+        android:background="@drawable/thu"
+        android:text="THU"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/wed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/tue"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/tue"
+        android:text="TUE"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/mon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/wed"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/wed"
+        android:text="WED"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/tue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/fri"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/fri"
+        android:text="FRI"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/thu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/sat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/sat"
+        android:text="SAT"
+        android:textColor="#00787474"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/fri"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <Button
+        android:id="@+id/sun"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sun"
+        android:text="SUN"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/sat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/mon"
+        android:text="MON"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.34" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_profile"
+        android:layout_width="400dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:background="#9E62DA"
     <Button
         android:id="@+id/btn_plus"
         android:layout_width="70dp"
@@ -36,7 +138,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintTop_toBottomOf="@+id/sun" />
+
+    <TextView
+        android:id="@+id/TodayINFO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="8dp"
+        android:text="MON"
+        android:textColor="#9E62DA"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
