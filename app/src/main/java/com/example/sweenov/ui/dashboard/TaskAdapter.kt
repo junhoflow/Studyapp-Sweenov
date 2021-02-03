@@ -8,7 +8,7 @@ import com.example.sweenov.R
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
-class ProfileAdapter(val list:ArrayList<Profiles>): RecyclerView.Adapter<Holder>(){
+class TaskAdapter(val list:ArrayList<Tasks>): RecyclerView.Adapter<Holder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
         return Holder(view)
@@ -26,10 +26,10 @@ class ProfileAdapter(val list:ArrayList<Profiles>): RecyclerView.Adapter<Holder>
 }
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    fun setItem(profiles: Profiles){
-        itemView.subname.text = profiles.subjectname
-        itemView.assname.text = profiles.assignmentname
-        itemView.deadline.text = profiles.deadline
+    fun setItem(profiles: Tasks){
+        itemView.subname.text = profiles.subjectName
+        itemView.assname.text = profiles.assignmentName
+        itemView.deadline.text = profiles.deadLine
 
     }
 }

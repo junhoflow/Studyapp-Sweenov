@@ -8,8 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sweenov.ui.dashboard.ProfileAdapter
-import com.example.sweenov.ui.dashboard.Profiles
+import com.example.sweenov.ui.dashboard.TaskAdapter
+import com.example.sweenov.ui.dashboard.Tasks
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 

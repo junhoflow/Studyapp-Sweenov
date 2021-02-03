@@ -9,10 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_addition.*
 import java.util.*
 
 class AdditionFragment : Fragment() {
+    private lateinit var databaseReference: DatabaseReference
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,6 +74,10 @@ class AdditionFragment : Fragment() {
                     {
                         if(inputTime.isNotEmpty())
                         {
+
+
+                            registerTask("홍길동", et_subject.text.toString(), et_title.text.toString(), et_date.text.toString(),et_time.text.toString())
+
                             Toast.makeText(activity, "과제가 추가되었습니다.", Toast.LENGTH_SHORT).show()
                             val action = AdditionFragmentDirections.actionAdditionFragmentToNavigationDashboard()
                             Navigation.findNavController(view).navigate(action)
@@ -97,4 +105,19 @@ class AdditionFragment : Fragment() {
 
 
     }
+
+    private fun registerTask(userName: String, subjectName: String, assignmentName: String, deadLine: String, closingTime:String) {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference(userName).child(subjectName)
+        var hashMap: HashMap<String, String> = HashMap()
+        hashMap.put("subjectName", subjectName)
+        hashMap.put("assignmentName", assignmentName)
+        hashMap.put("deadLine", deadLine)
+        hashMap.put("closingTIme", closingTime)
+        hashMap.put("userId", userName)
+        databaseReference.setValue(hashMap)
+
+    }
+
+
 }

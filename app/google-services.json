@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691276809661",
+    "project_id": "sweenov-61669",
+    "storage_bucket": "sweenov-61669.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691276809661:android:46865bf0233e9610a33ed4",
+        "android_client_info": {
+          "package_name": "com.example.sweenov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691276809661-cnac40jmlkhlppt40uc4t9jnmd8demm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0DWwIfCw9Z9XaEKVv5Sg9ZjwhNdyGqzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691276809661-cnac40jmlkhlppt40uc4t9jnmd8demm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

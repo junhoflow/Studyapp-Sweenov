@@ -7,21 +7,36 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <Button
-        android:id="@+id/thu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/sat"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
+        android:background="@drawable/sat"
+        android:text="SATURDAY"
+        android:textColor="#00787474"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/fri"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
 
-        android:background="@drawable/thu"
-        android:text="THU"
+    <Button
+        android:id="@+id/mon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/mon"
+        android:text="MONDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toEndOf="@+id/wed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <Button
         android:id="@+id/tue"
@@ -31,13 +46,13 @@
         android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/tue"
-        android:text="TUE"
+        android:text="TUESDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/mon"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <Button
         android:id="@+id/wed"
@@ -47,13 +62,30 @@
         android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/wed"
-        android:text="WED"
+        android:text="WEDNESDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/tue"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.105" />
+
+    <Button
+        android:id="@+id/thu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="9dp"
+
+        android:background="@drawable/thu"
+        android:text="THURSDAY"
+        android:textColor="#00FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toEndOf="@+id/wed"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
 
     <Button
         android:id="@+id/fri"
@@ -63,29 +95,13 @@
         android:layout_marginLeft="7dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/fri"
-        android:text="FRI"
+        android:text="FRIDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
         app:layout_constraintStart_toEndOf="@+id/thu"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
-
-    <Button
-        android:id="@+id/sat"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="9dp"
-        android:background="@drawable/sat"
-        android:text="SAT"
-        android:textColor="#00787474"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toEndOf="@+id/fri"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <Button
         android:id="@+id/sun"
@@ -93,41 +109,40 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sun"
-        android:text="SUN"
-        android:textColor="#00FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/sat"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/mon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginBottom="9dp"
-        android:background="@drawable/mon"
-        android:text="MON"
+        android:background="@drawable/sun"
+        android:text="SUNDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_profile"
-        android:layout_width="400dp"
-        android:layout_height="220dp"
-        android:layout_marginTop="40dp"
-        android:background="#9E62DA"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="401dp"
+        android:layout_height="368dp"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sun" />
+        app:layout_constraintTop_toBottomOf="@+id/TodayINFO" />
+
+    <TextView
+        android:id="@+id/TodayINFO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="20dp"
+        android:text="MONDAY"
+        android:textColor="#9E62DA"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thu" />
 
     <Button
         android:id="@+id/btn_plus"
@@ -143,23 +158,10 @@
         app:iconTint="#F3F3F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.94" />
 
-
-    <TextView
-        android:id="@+id/TodayINFO"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="8dp"
-        android:text="MON"
-        android:textColor="#9E62DA"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
