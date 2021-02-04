@@ -11,7 +11,9 @@ class loginWithName : AppCompatActivity() {
         setContentView(R.layout.activity_login_with_name)
 
         buttonForLogin.setOnClickListener{
+            App.name = nameForLogin.text.toString()
             val intent1 = Intent(this, MainActivity::class.java)
+
             startActivity(intent1)
         }
     }

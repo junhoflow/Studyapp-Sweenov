@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_login_with_name.*
 import kotlinx.android.synthetic.main.fragment_addition.*
 import java.util.*
 
@@ -76,7 +77,7 @@ class AdditionFragment : Fragment() {
                         {
 
 
-                            registerTask("홍길동", et_subject.text.toString(), et_title.text.toString(), et_date.text.toString(),et_time.text.toString())
+                            registerTask(App.name, et_subject.text.toString(), et_title.text.toString(), et_date.text.toString(),et_time.text.toString())
 
                             Toast.makeText(activity, "과제가 추가되었습니다.", Toast.LENGTH_SHORT).show()
                             val action = AdditionFragmentDirections.actionAdditionFragmentToNavigationDashboard()
@@ -114,7 +115,7 @@ class AdditionFragment : Fragment() {
         hashMap.put("assignmentName", assignmentName)
         hashMap.put("deadLine", deadLine)
         hashMap.put("closingTIme", closingTime)
-        hashMap.put("userId", userName)
+        hashMap.put("userName", userName)
         databaseReference.setValue(hashMap)
 
     }

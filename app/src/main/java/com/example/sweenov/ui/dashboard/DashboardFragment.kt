@@ -1,5 +1,6 @@
 package com.example.sweenov.ui.dashboard
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,10 +22,12 @@ import com.example.sweenov.App
 import com.example.sweenov.R
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_addition.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
 
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import java.util.*
 
 class DashboardFragment : Fragment() {
 
@@ -146,9 +149,11 @@ class DashboardFragment : Fragment() {
 
     fun getTasksList() {
 
+
+
         //필요한 것 = 과제를 할당 받은 팔로워의 이름
         // val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
-        var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference("홍길동")
+        var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference(App.name)
 
         databaseReference.addValueEventListener(object : ValueEventListener {
 
@@ -165,7 +170,7 @@ class DashboardFragment : Fragment() {
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val quest = dataSnapShot.getValue(Tasks::class.java)
 
-                    if (quest!!.deadLine.equals("2021년 2월 3일")) {
+                    if (quest!!.userName.equals(App.name)) {
                         App.questList.add(quest)
                     }
                 }
