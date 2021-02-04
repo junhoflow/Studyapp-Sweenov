@@ -12,6 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/sat"
         android:text="SATURDAY"
@@ -26,8 +27,9 @@
         android:id="@+id/mon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/mon"
         android:text="MONDAY"
@@ -44,6 +46,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/tue"
         android:text="TUESDAY"
@@ -60,6 +63,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/wed"
         android:text="WEDNESDAY"
@@ -76,8 +80,9 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginTop="5dp"
 
+        android:layout_marginBottom="9dp"
         android:background="@drawable/thu"
         android:text="THURSDAY"
         android:textColor="#00FFFFFF"
@@ -93,6 +98,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/fri"
         android:text="FRIDAY"
@@ -109,6 +115,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/sun"
         android:text="SUNDAY"
@@ -122,7 +129,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_profile"
         android:layout_width="401dp"
-        android:layout_height="368dp"
+        android:layout_height="411dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -162,6 +169,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.94" />
+
+    <ImageButton
+        android:id="@+id/ButtonForUpdate"
+        android:layout_width="46dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/refresh3"
+        app:layout_constraintBottom_toTopOf="@+id/rv_profile"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

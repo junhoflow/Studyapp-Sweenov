@@ -124,6 +124,14 @@ class DashboardFragment : Fragment() {
         })
         // Fragment 클래스에서 사용 시
 
+        val btnForUpdate = root.ButtonForUpdate
+        btnForUpdate.setOnClickListener{
+            getTasksList()
+            val adapter = TaskAdapter(App.questList)
+            root.rv_profile.adapter = adapter!!
+            root.rv_profile.layoutManager= LinearLayoutManager(context)
+        }
+
         val adapter = TaskAdapter(App.questList)
         root.rv_profile.adapter = adapter!!
         root.rv_profile.layoutManager= LinearLayoutManager(context)
@@ -149,8 +157,6 @@ class DashboardFragment : Fragment() {
 
     fun getTasksList() {
 
-
-
         //필요한 것 = 과제를 할당 받은 팔로워의 이름
         // val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
         var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference(App.name)
@@ -175,9 +181,7 @@ class DashboardFragment : Fragment() {
                     }
                 }
 
-
             }
-
 
         })
     }

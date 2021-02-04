@@ -109,7 +109,9 @@ class AdditionFragment : Fragment() {
 
     private fun registerTask(userName: String, subjectName: String, assignmentName: String, deadLine: String, closingTime:String) {
 
-        databaseReference = FirebaseDatabase.getInstance().getReference(userName).child(subjectName)
+        var stringForData = "$subjectName-$assignmentName"
+
+        databaseReference = FirebaseDatabase.getInstance().getReference(userName).child(stringForData)
         var hashMap: HashMap<String, String> = HashMap()
         hashMap.put("subjectName", subjectName)
         hashMap.put("assignmentName", assignmentName)
