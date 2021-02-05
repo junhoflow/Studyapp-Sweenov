@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sweenov.R
 import kotlinx.android.synthetic.main.list_item.view.*
 
+//이곳은 과제 목록 창에 있는 리사이클러뷰(리스트뷰와 비슷한 기능, 리스트를 보여줌)를 위한 곳입니다.
 
 class TaskAdapter(val list:ArrayList<Tasks>): RecyclerView.Adapter<Holder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

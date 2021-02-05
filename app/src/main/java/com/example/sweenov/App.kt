@@ -5,6 +5,9 @@ import com.example.sweenov.ui.dashboard.Tasks
 import com.google.android.gms.tasks.Task
 
 class App : Application() {
+    //이곳은 프로젝트의 전역 변수 사용을 위한 곳입니다.
+    //이곳에 전역 변수를 선언하면 다른 프래그먼트나 액티비티에서 "App.전역변수이름" 이런 식으로 사용할 수 있습니다.
+
     companion object
     {
 
@@ -13,11 +16,6 @@ class App : Application() {
             Tasks( "새로 고침 해주세요", "", "", "","")
         )
 
-        //var todoList = arrayListOf<ThingsTodo>(
-        //  ThingsTodo("엄마카드로 학원비 결제하기", "200p"),
-        //  ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p"),
-        //  ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p"),
-        //  ThingsTodo("구몬 수학 p.33까지 학습 후 채점하기", "500p")
-        // )
+
     }
 }

@@ -38,7 +38,7 @@ class AdditionFragment : Fragment() {
             var listener = DatePickerDialog.OnDateSetListener{
                     _,i,i2,i3 -> et_date.setText("${i}년 ${i2+1}월 ${i3}일")
             }
-
+            
             var picker = DatePickerDialog(
                 this!!.requireActivity(), android.R.style.Theme_Holo_Light_Dialog_NoActionBar,
                 listener,year, month, day)
@@ -76,10 +76,11 @@ class AdditionFragment : Fragment() {
                         if(inputTime.isNotEmpty())
                         {
 
-
                             registerTask(App.name, et_subject.text.toString(), et_title.text.toString(), et_date.text.toString(),et_time.text.toString())
+                            //사용자가 앱에서 입력한 과제 정보들을 파이어베이스에 추가하는 함수를 실행
 
-                            Toast.makeText(activity, "과제가 추가되었습니다.", Toast.LENGTH_SHORT).show()
+
+                            Toast.makeText(activity, "과제가 추가되었습니다.", Toast.LENGTH_SHORT).show() //과제가 추가되었다는 메시지를 출력
                             val action = AdditionFragmentDirections.actionAdditionFragmentToNavigationDashboard()
                             Navigation.findNavController(view).navigate(action)
                         }
@@ -107,18 +108,29 @@ class AdditionFragment : Fragment() {
 
     }
 
+
     private fun registerTask(userName: String, subjectName: String, assignmentName: String, deadLine: String, closingTime:String) {
+        //이곳은 파이어베이스에 과제 정보를 추가해주는 함수입니다.
 
         var stringForData = "$subjectName-$assignmentName"
 
         databaseReference = FirebaseDatabase.getInstance().getReference(userName).child(stringForData)
-        var hashMap: HashMap<String, String> = HashMap()
-        hashMap.put("subjectName", subjectName)
-        hashMap.put("assignmentName", assignmentName)
-        hashMap.put("deadLine", deadLine)
-        hashMap.put("closingTIme", closingTime)
-        hashMap.put("userName", userName)
+        //파이어베이스로 접속해서 함수의 인자로 받은 사용자 이름 userName을 최상위 폴더명으로 인지하고
+        //stringForData라는 이름을 그 다음 하위 폴더명으로 인식하여
+        //그 userName-stringForData 폴더를 databaseReference라는 변수에 넣어 줍니다.
+
+        var hashMap: HashMap<String, String> = HashMap()// 이것은 파이어베이스에 정보를 입력할 때 필요한 함수로 예상됩니다, 형식(틀)과 그에 맞는 정보를 String 값으로 받는 다는 의미로 추정됩니다
+
+        hashMap.put("subjectName", subjectName)         // subjectName이라는 틀을 만들고 그 안에 인자로 받은 과목 명 값을 넣어 줍니다.
+        hashMap.put("assignmentName", assignmentName)   // assignmentName이라는 틀을 만들고 그 안에 인자로 받은 과제 제목 값을 넣어 줍니다.
+        hashMap.put("deadLine", deadLine)               // deadLine이라는 틀을 만들고 그 안에 인자로 받은 마감일 정보를 넣어 줍니다.
+        hashMap.put("closingTIme", closingTime)         // closingTIme이라는 틀을 만들고 그 안에 인자로 받은 마감시간 정보를 넣어 줍니다.
+        hashMap.put("userName", userName)               // userName이라는 틀을 만들고 그 안에 인자로 받은 사용자 이름 값을 넣어 줍니다.
+
+
         databaseReference.setValue(hashMap)
+        //바로 위 코드에서 만들어진 틀과 그에 맞게 들어간 정보 모두를
+        //파이어베이스의 userName-stringForData라는 이름의 폴더에 등록해 줍니다.
 
     }
 
