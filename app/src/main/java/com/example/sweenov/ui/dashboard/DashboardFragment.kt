@@ -150,6 +150,9 @@ class DashboardFragment : Fragment() {
 
 
 
+
+
+
         databaseReference.addValueEventListener(object : ValueEventListener {
 
             override fun onCancelled(error: DatabaseError) {
@@ -161,7 +164,7 @@ class DashboardFragment : Fragment() {
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val quest = dataSnapShot.getValue(Tasks::class.java)
-
+                    //여기서 파이어베이스의 과제 정보 중 자신의 이름이 등록된 과제들을 모두 추가해도록 해줍니다.
                     if (quest!!.userName.equals(App.name)) {
                         App.questList.add(quest)
                     }
