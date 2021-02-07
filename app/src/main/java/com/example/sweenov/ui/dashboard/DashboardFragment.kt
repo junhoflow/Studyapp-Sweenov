@@ -139,9 +139,6 @@ class DashboardFragment : Fragment() {
 
 
 
-
-
-
     fun getTasksList() {
         //파이어베이스에서 과제 list를 가져오는 함수
         //현재는 단순하게 자신의 이름 폴더 명에 있는 과제들을 모두 가져오도록 해주어

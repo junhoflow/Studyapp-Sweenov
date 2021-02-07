@@ -47,15 +47,14 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
 
 
     }
+
     fun deleteTask(userName: String, subjectName:String, assignmentName : String){
 //필요한 것 = 업애려고하는 과제의 이름과 그 과제를 할당받은 팔로워의 이름
         var stringForData = "$subjectName-$assignmentName"
         FirebaseDatabase.getInstance().getReference().child(userName).child(stringForData).removeValue()
     }
-    fun refreshFragment(fragment: Fragment, fragmentManager: FragmentManager) {
-        var ft: FragmentTransaction = fragmentManager.beginTransaction()
-        ft.detach(fragment).attach(fragment).commit()
-    }
+
+
 }
 
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
