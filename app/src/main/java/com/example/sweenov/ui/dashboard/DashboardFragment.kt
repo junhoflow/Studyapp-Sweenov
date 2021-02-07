@@ -30,6 +30,9 @@ class DashboardFragment : Fragment() {
 
         getTasksList()
         //파이어베이스에서 과제 리스트 데이터를 받아오는 함수를 실행하여 자신이 등록한 과제들을 가져오게끔 해줍니다.
+        val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
+        root.rv_Tasks.adapter = adapter!!
+        root.rv_Tasks.layoutManager= LinearLayoutManager(context)
 
 
         val btn1 = root.sun // btn1에 과제목록 레이아웃에 있는 일요일 버튼을 대입해 줍니다.
@@ -119,11 +122,8 @@ class DashboardFragment : Fragment() {
 
         }
 
-        val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
-        root.rv_Tasks.adapter = adapter!!
-        root.rv_Tasks.layoutManager= LinearLayoutManager(context)
-        return root
 
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
