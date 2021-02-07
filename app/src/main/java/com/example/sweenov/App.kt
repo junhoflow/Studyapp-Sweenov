@@ -10,13 +10,9 @@ class App : Application() {
 
     companion object
     {
-
         var name: String = ""
         var questList : ArrayList<Tasks> = arrayListOf(
             Tasks( "새로 고침 해주세요", "", "", "","")
         )
-
-
-
     }
 }

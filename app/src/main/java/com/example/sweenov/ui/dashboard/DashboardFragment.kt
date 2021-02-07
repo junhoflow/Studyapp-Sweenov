@@ -38,7 +38,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.sun.text.toString()
             getTasksList() //
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -49,7 +49,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.mon.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -60,7 +60,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.tue.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -71,7 +71,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.wed.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -82,7 +82,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.thu.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -93,7 +93,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.fri.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -104,7 +104,7 @@ class DashboardFragment : Fragment() {
 
             root.TodayINFO.text = root.sat.text.toString()
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         })
@@ -113,12 +113,13 @@ class DashboardFragment : Fragment() {
         val btnForUpdate = root.ButtonForUpdate // 상수 btnForUpdate에 과제목록 창에 있는 새로고침 버튼을 대입해 줍니다.
         btnForUpdate.setOnClickListener{
             getTasksList()
-            val adapter = TaskAdapter(App.questList)
+            val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
             root.rv_Tasks.adapter = adapter!!
             root.rv_Tasks.layoutManager= LinearLayoutManager(context)
+
         }
 
-        val adapter = TaskAdapter(App.questList)
+        val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
         root.rv_Tasks.adapter = adapter!!
         root.rv_Tasks.layoutManager= LinearLayoutManager(context)
         return root
@@ -147,9 +148,6 @@ class DashboardFragment : Fragment() {
         //날짜 별로 과제를 가져오지는 못 합니다.
 
         var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference(App.name)
-
-
-
 
 
 

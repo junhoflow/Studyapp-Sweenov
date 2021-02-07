@@ -14,7 +14,7 @@ class loginWithName : AppCompatActivity() {
 
         buttonForLogin.setOnClickListener{
             App.name = nameForLogin.text.toString() //로그인을 할 때 자신의 이름을 입력하면 그 이름을 전역함수 App.name에 대입해 줍니다.
-            val intent1 = Intent(this, MainActivity::class.java)
+            val intent1 = Intent(this, ForLoading::class.java)
 
             startActivity(intent1)
         }
