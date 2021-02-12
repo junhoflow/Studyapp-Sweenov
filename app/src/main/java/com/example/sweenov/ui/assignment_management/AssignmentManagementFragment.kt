@@ -11,8 +11,8 @@ import androidx.navigation.Navigation
 import com.example.sweenov.App
 import com.example.sweenov.R
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_dashboard.view.*
+import kotlinx.android.synthetic.main.fragment_a_m.*
+import kotlinx.android.synthetic.main.fragment_a_m.view.*
 
 class AssignmentManagementFragment : Fragment() {
     // 이곳은 과제 목록 창의 동작을 담당하는 프래그먼트 입니다.
@@ -20,7 +20,7 @@ class AssignmentManagementFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val root = inflater.inflate(R.layout.fragment_a_m, container, false)
         //위 변수 root는 fragment_dashboard 라는 레이아웃과
         //지금 이 프래그먼트(DashboardFragment.kt)의 연결고리 역할을 하는 역할인 것 같습니다
 

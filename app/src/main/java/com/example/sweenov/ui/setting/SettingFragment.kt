@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.sweenov.R
-import kotlinx.android.synthetic.main.fragment_notifications.*
+import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment : Fragment() {
 
@@ -28,7 +28,7 @@ class SettingFragment : Fragment() {
     ): View? {
         settingViewModel =
                 ViewModelProvider(this).get(SettingViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false) //inflate를 통해 res/layout/fragment_notifications 레이아웃을 가져옴
+        val root = inflater.inflate(R.layout.fragment_setting, container, false) //inflate를 통해 res/layout/fragment_notifications 레이아웃을 가져옴
         val textView: TextView = root.findViewById(R.id.text_notifications)
         settingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

@@ -21,7 +21,7 @@ class StudyModeFragment : Fragment() {
     ): View? {
         studyModeViewModel =
                 ViewModelProvider(this).get(StudyModeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val root = inflater.inflate(R.layout.fragment_studymode, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         studyModeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
