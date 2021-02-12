@@ -22,21 +22,23 @@
 
         <TextView
             android:id="@+id/subname"
-            android:layout_width="147dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
+            android:layout_width="95dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
             android:text="객체지향프로그래밍"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/assname"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/deadline"
-            android:layout_width="125dp"
+            android:layout_width="156dp"
             android:layout_height="22dp"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
@@ -51,7 +53,7 @@
 
         <TextView
             android:id="@+id/assname"
-            android:layout_width="85dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:text="for문 연습과제"
             android:textColor="#03A9F4"
@@ -68,6 +70,8 @@
             android:layout_height="43dp"
             android:background="#9E62DA"
             android:text="X"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

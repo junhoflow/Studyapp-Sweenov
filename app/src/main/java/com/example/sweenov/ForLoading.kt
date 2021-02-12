@@ -5,17 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Toast
-import com.example.sweenov.ui.dashboard.Tasks
+import com.example.sweenov.ui.assignment_management.Tasks
 import com.google.firebase.database.*
 
 class ForLoading : AppCompatActivity() {
+    //로딩 창을 위한 kt파일
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_for_loading)
 
         getTasksList()
 
-        SystemClock.sleep(500)
+        //아래 코드를 통해서 로딩 액티비티에서 메인 액티비티로 넘어가게 해준다
+        SystemClock.sleep(500) //이때 500ms 동안 기다렸다가 메인 액티비티로 넘어가게 해주어
+                                   //앱이 로딩 창에 있을 때 파이어베이스에서 과제 정보를 적절히 가져오도록 작업 시간을 벌어준다.
+
         val intent1 = Intent(this, MainActivity::class.java)
         startActivity(intent1)
         finish()

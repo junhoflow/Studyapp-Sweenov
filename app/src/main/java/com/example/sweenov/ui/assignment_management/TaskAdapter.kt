@@ -1,4 +1,4 @@
-package com.example.sweenov.ui.dashboard
+package com.example.sweenov.ui.assignment_management
 
 import android.content.Context
 import android.content.Intent
@@ -8,9 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sweenov.App
 import com.example.sweenov.ForLoading
@@ -19,7 +16,8 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
-//이곳은 과제 목록 창에 있는 리사이클러뷰(리스트뷰와 비슷한 기능, 리스트를 보여줌)를 위한 곳입니다.
+//이곳은 과제 목록 창에 있는 리사이클러뷰(리스트뷰와 비슷한 기능, 리스트를 보여줌)를 위한 곳
+//리사이클러 뷰에 어떤 정보를 출력할지, 리사이클러뷰에 출력된 아이템을 선택하면 어떤 일이 일어나게 할 것인지 등을 설정할 수 있다.
 var subName : String = ""
 var assName : String = ""
 class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView.Adapter<Holder>(){
@@ -36,9 +34,11 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val profiles = list[position]
         holder.setItem(profiles)
-        holder.btnd.setOnClickListener {
+        holder.btnd.setOnClickListener {//리사이클러뷰(과제 목록 창)에 있는 과제 삭제 버튼을 선택하면 실행되는 곳
 
             deleteTask(App.name, holder.ForSubName.text.toString(), holder.ForAssName.text.toString())
+
+
             Toast.makeText(context, "과제 ${holder.ForAssName.text} 가 제거되었습니다", Toast.LENGTH_LONG).show()
             val intent3 = Intent(context, ForLoading::class.java)
             context.startActivity(intent3)

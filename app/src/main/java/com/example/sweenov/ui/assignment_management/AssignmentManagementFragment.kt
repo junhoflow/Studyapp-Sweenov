@@ -1,4 +1,4 @@
-package com.example.sweenov.ui.dashboard
+package com.example.sweenov.ui.assignment_management
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_dashboard.view.*
 
-class DashboardFragment : Fragment() {
+class AssignmentManagementFragment : Fragment() {
     // 이곳은 과제 목록 창의 동작을 담당하는 프래그먼트 입니다.
     // 이곳에서의 코드가 과제 목록 레이아웃과 상호작용합니다.
 
@@ -25,11 +25,13 @@ class DashboardFragment : Fragment() {
         //지금 이 프래그먼트(DashboardFragment.kt)의 연결고리 역할을 하는 역할인 것 같습니다
 
 
-        root.rv_Tasks.setHasFixedSize(true)
+        root.rv_Tasks.setHasFixedSize(true)//리사이클러뷰의 사이즈 설정과 관련된 코드인 것 같다
 
 
         getTasksList()
-        //파이어베이스에서 과제 리스트 데이터를 받아오는 함수를 실행하여 자신이 등록한 과제들을 가져오게끔 해줍니다.
+        //파이어베이스에서 과제 리스트 데이터를 받아와서 앱의 전역 변수인 App.questList에 넣어주는 함수
+
+        //앱의 전역 변수인 App.questList에 있는 과제 목록들을 리사이클러 뷰에 뿌려주는 함수
         val adapter = context?.let { it1 -> TaskAdapter(it1,App.questList) }
         root.rv_Tasks.adapter = adapter!!
         root.rv_Tasks.layoutManager= LinearLayoutManager(context)
@@ -130,7 +132,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btn_plus.setOnClickListener()
         {
-            val action = DashboardFragmentDirections.actionNavigationDashboardToAdditionFragment()
+            val action = AssignmentManagementFragmentDirections.actionNavigationDashboardToAdditionFragment()
             Navigation.findNavController(view).navigate(action)
         }
 

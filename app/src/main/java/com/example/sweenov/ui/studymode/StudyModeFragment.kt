@@ -1,4 +1,4 @@
-package com.example.sweenov.ui.home
+package com.example.sweenov.ui.studymode
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.sweenov.R
 
-class HomeFragment : Fragment() {
+class StudyModeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var studyModeViewModel: StudyModeViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
+        studyModeViewModel =
+                ViewModelProvider(this).get(StudyModeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        studyModeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

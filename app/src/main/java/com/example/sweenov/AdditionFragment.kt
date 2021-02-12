@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_with_name.*
 import kotlinx.android.synthetic.main.fragment_addition.*
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
 class AdditionFragment : Fragment() {
@@ -31,6 +33,7 @@ class AdditionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         et_date.setOnClickListener{
             var calendar = Calendar.getInstance()
             var year = calendar.get(Calendar.YEAR)
@@ -39,6 +42,7 @@ class AdditionFragment : Fragment() {
 
             var listener = DatePickerDialog.OnDateSetListener{
                     _,i,i2,i3 -> et_date.setText("${i}년 ${i2+1}월 ${i3}일")
+
             }
             
             var picker = DatePickerDialog(
@@ -138,5 +142,8 @@ class AdditionFragment : Fragment() {
         //파이어베이스의 userName-stringForData라는 이름의 폴더에 등록해 줍니다.
 
     }
+
+
+
 
 }

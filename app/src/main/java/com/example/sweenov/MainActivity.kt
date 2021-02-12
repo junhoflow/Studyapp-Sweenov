@@ -1,22 +1,14 @@
 package com.example.sweenov
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sweenov.ui.dashboard.TaskAdapter
-import com.example.sweenov.ui.dashboard.Tasks
-import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_dashboard.view.*
 
-
+//메인 액티비티 실행을 위한 kt 파일
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
