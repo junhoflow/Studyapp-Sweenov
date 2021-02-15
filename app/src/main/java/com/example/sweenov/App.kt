@@ -12,8 +12,9 @@ class App : Application() {
 
         var name: String = ""
         var questList : ArrayList<Tasks> = arrayListOf(//Tasks 형식으로 전역 변수 questList에 과목 정보를 저장할 수 있도록 선언
-            Tasks( "새로 고침 해주세요", "", "", "","")
+            Tasks( "새로 고침 해주세요", "", "", "","", "")
         )
+        var DayQuest : Int = 2
 
     }
 }

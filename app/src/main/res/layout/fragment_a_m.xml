@@ -8,11 +8,11 @@
 
     <Button
         android:id="@+id/sat"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/sat"
         android:text="SATURDAY"
@@ -21,15 +21,15 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/fri"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/mon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/mon"
         android:text="MONDAY"
@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/tue"
@@ -46,7 +46,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/tue"
         android:text="TUESDAY"
@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/mon"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/wed"
@@ -63,7 +63,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/wed"
         android:text="WEDNESDAY"
@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/tue"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/thu"
@@ -80,7 +80,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
 
         android:layout_marginBottom="9dp"
         android:background="@drawable/thu"
@@ -90,7 +90,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/wed"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/fri"
@@ -98,7 +98,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/fri"
         android:text="FRIDAY"
@@ -107,7 +107,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/thu"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <Button
         android:id="@+id/sun"
@@ -115,24 +115,24 @@
         android:layout_height="50dp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="9dp"
         android:background="@drawable/sun"
         android:text="SUNDAY"
         android:textColor="#00FFFFFF"
         android:textSize="12sp"
+        app:backgroundTint="#9E62DA"
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintStart_toEndOf="@+id/sat"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_Tasks"
-        android:layout_width="401dp"
-        android:layout_height="411dp"
+        android:layout_width="397dp"
+        android:layout_height="367dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TodayINFO" />
 
@@ -144,7 +144,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="20dp"
         android:text="MONDAY"
-        android:textColor="#9E62DA"
+        android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
@@ -176,10 +176,25 @@
         android:layout_height="39dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/refresh3"
+        android:background="#00000000"
+        android:src="@drawable/refresh"
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Date"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/thu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

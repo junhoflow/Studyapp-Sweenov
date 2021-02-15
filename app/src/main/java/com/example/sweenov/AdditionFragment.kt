@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_with_name.*
 import kotlinx.android.synthetic.main.fragment_addition.*
+import kotlinx.android.synthetic.main.list_item.*
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -41,7 +42,7 @@ class AdditionFragment : Fragment() {
             var day = calendar.get(Calendar.DAY_OF_MONTH)
 
             var listener = DatePickerDialog.OnDateSetListener{
-                    _,i,i2,i3 -> et_date.setText("${i}년 ${i2+1}월 ${i3}일")
+                    _,i,i2,i3 -> et_date.setText("${i}-${i2+1}-${i3}")
 
             }
             
@@ -120,7 +121,22 @@ class AdditionFragment : Fragment() {
     private fun registerTask(userName: String, subjectName: String, assignmentName: String, deadLine: String, closingTime:String) {
         //이곳은 파이어베이스에 과제 정보를 추가해주는 함수입니다.
 
-        var stringForData = "$subjectName-$assignmentName"
+        var stringForData = "$deadLine-$closingTime"
+
+        val dateArray = deadLine.split("-").toTypedArray()
+        val cal = Calendar.getInstance()
+        cal[dateArray[0].toInt(), dateArray[1].toInt() - 1] = dateArray[2].toInt()
+        // 요일 확인(일요일:1, 월요일:2, ... ,토요일:7)
+
+        var dayOfWeek = cal.get(Calendar.DAY_OF_WEEK)
+        var dayOfWeekString : String = "ha"
+        if(dayOfWeek == 1) dayOfWeekString = "sun"
+        else if (dayOfWeek == 2) dayOfWeekString = "mon"
+        else if (dayOfWeek == 3) dayOfWeekString = "tue"
+        else if (dayOfWeek == 4) dayOfWeekString = "wed"
+        else if (dayOfWeek == 5) dayOfWeekString = "thu"
+        else if (dayOfWeek == 6) dayOfWeekString = "fri"
+        else if (dayOfWeek == 7) dayOfWeekString = "sat"
 
         databaseReference = FirebaseDatabase.getInstance().getReference(userName).child(stringForData)
         //파이어베이스로 접속해서 함수의 인자로 받은 사용자 이름 userName을 최상위 폴더명으로 인지하고
@@ -135,6 +151,8 @@ class AdditionFragment : Fragment() {
         hashMap.put("deadLine", deadLine)               // deadLine이라는 틀을 만들고 그 안에 인자로 받은 마감일 정보를 넣어 줍니다.
         hashMap.put("closingTIme", closingTime)         // closingTIme이라는 틀을 만들고 그 안에 인자로 받은 마감시간 정보를 넣어 줍니다.
         hashMap.put("userName", userName)               // userName이라는 틀을 만들고 그 안에 인자로 받은 사용자 이름 값을 넣어 줍니다.
+        hashMap.put("dayOfWeek", dayOfWeekString)
+
 
 
         databaseReference.setValue(hashMap)
@@ -142,8 +160,5 @@ class AdditionFragment : Fragment() {
         //파이어베이스의 userName-stringForData라는 이름의 폴더에 등록해 줍니다.
 
     }
-
-
-
 
 }

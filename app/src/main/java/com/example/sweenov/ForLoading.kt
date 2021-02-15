@@ -15,7 +15,7 @@ class ForLoading : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_for_loading)
 
-        getTasksList()
+        //getTasksList()
 
         //아래 코드를 통해서 로딩 액티비티에서 메인 액티비티로 넘어가게 해준다
         SystemClock.sleep(500) //이때 500ms 동안 기다렸다가 메인 액티비티로 넘어가게 해주어
