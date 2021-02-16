@@ -39,7 +39,7 @@ class SettingFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toggleButton2.setOnCheckedChangeListener{_, isChecked ->
+        isAlarm_switch.setOnCheckedChangeListener{_, isChecked ->
             val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
             val vibrationEffect = VibrationEffect.createOneShot(100, 50)
             if(isChecked){

@@ -23,13 +23,13 @@ import java.util.*
 class AssignmentManagementFragment : Fragment() {
     // 이곳은 과제 목록 창의 동작을 담당하는 프래그먼트 입니다.
     // 이곳에서의 코드가 과제 목록 레이아웃과 상호작용합니다.
-    var sunday : Int=0
-    var monday : Int=0
-    var tueday : Int=0
-    var wedday : Int=0
-    var thuday : Int=0
-    var friday : Int=0
-    var satday : Int=0
+    var sunday : String=""
+    var monday : String=""
+    var tueday : String=""
+    var wedday : String=""
+    var thuday : String=""
+    var friday : String=""
+    var satday : String=""
 
     fun timeGenerator() :String{
         val day = Calendar.getInstance()
@@ -70,74 +70,74 @@ class AssignmentManagementFragment : Fragment() {
 fun datesetting(){
     val dateArray = timeGenerator().split("-").toTypedArray()
     if (todayGenerator() == "sun"){
-        sunday = dateArray[2].toInt()
+        sunday = dateArray[2] + " (Today)"
         var hi = dateArray[2].toInt()
-        monday = hi + 1
-        tueday = hi + 2
-        wedday = hi + 3
-        thuday = hi + 4
-        friday = hi + 5
-        satday = hi - 1
+        monday = (hi + 1).toString()
+        tueday = (hi + 2).toString()
+        wedday = (hi + 3).toString()
+        thuday = (hi + 4).toString()
+        friday = (hi + 5).toString()
+        satday = (hi - 1).toString()
     }
     if (todayGenerator() == "mon"){
-        monday = dateArray[2].toInt()
+        monday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        tueday = (hi + 1)
-        wedday = hi + 2
-        thuday = hi + 3
-        friday = hi + 4
-        satday = hi + 5
-        sunday = hi - 1
+        tueday = (hi + 1).toString()
+        wedday = (hi + 2).toString()
+        thuday = (hi + 3).toString()
+        friday = (hi + 4).toString()
+        satday = (hi + 5).toString()
+        sunday = (hi - 1).toString()
     }
     if (todayGenerator() == "tue"){
-        tueday = dateArray[2].toInt()
+        tueday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        wedday = hi + 1
-        thuday = hi + 2
-        friday = hi + 3
-        satday = hi + 4
-        sunday = hi + 5
-        monday = hi - 1
+        wedday = (hi + 1).toString()
+        thuday = (hi + 2).toString()
+        friday = (hi + 3).toString()
+        satday = (hi + 4).toString()
+        sunday = (hi + 5).toString()
+        monday = (hi - 1).toString()
     }
     if (todayGenerator() == "wed"){
-        wedday = dateArray[2].toInt()
+        wedday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        thuday = hi + 1
-        friday = hi + 2
-        satday = hi + 3
-        sunday = hi + 4
-        monday = hi + 5
-        tueday = hi - 1
+        thuday = (hi + 1).toString()
+        friday = (hi + 2).toString()
+        satday = (hi + 3).toString()
+        sunday = (hi + 4).toString()
+        monday = (hi + 5).toString()
+        tueday = (hi - 1).toString()
     }
     if (todayGenerator() == "thu"){
-        thuday = dateArray[2].toInt()
+        thuday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        friday = hi + 1
-        satday = hi + 2
-        sunday = hi + 3
-        monday = hi + 4
-        tueday = hi + 5
-        wedday = hi - 1
+        friday = (hi + 1).toString()
+        satday = (hi + 2).toString()
+        sunday = (hi + 3).toString()
+        monday = (hi + 4).toString()
+        tueday = (hi + 5).toString()
+        wedday = (hi - 1).toString()
     }
     if (todayGenerator() == "fri"){
-        friday = dateArray[2].toInt()
+        friday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        satday = hi + 1
-        sunday = hi + 2
-        monday = hi + 3
-        tueday = hi + 4
-        wedday = hi + 5
-        thuday = hi - 1
+        satday = (hi + 1).toString()
+        sunday = (hi + 2).toString()
+        monday = (hi + 3).toString()
+        tueday = (hi + 4).toString()
+        wedday = (hi + 5).toString()
+        thuday = (hi - 1).toString()
     }
     if (todayGenerator() == "sat"){
-        satday = dateArray[2].toInt()
+        satday = dateArray[2]+ " (Today)"
         var hi = dateArray[2].toInt()
-        sunday = hi + 1
-        monday = hi + 2
-        tueday = hi + 3
-        wedday = hi + 4
-        thuday = hi + 5
-        friday = hi - 1
+        sunday = (hi + 1).toString()
+        monday = (hi + 2).toString()
+        tueday = (hi + 3).toString()
+        wedday = (hi + 4).toString()
+        thuday = (hi + 5).toString()
+        friday = (hi - 1).toString()
     }
 }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -154,7 +154,7 @@ fun datesetting(){
             //날짜 별로 과제를 가져오지는 못 합니다.
             var ForDayOfWeek2 : String = " "
             var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference(App.name)
-            var ForDate : Int = 0
+            var ForDate : String = ""
             if(ForDayOfWeek == 1) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${sunday}"
                 ForDate = sunday
@@ -205,7 +205,7 @@ fun datesetting(){
                         val quest = dataSnapShot.getValue(Tasks::class.java)
                         val dateForGet = quest!!.deadLine.split("-").toTypedArray()
                         //여기서 파이어베이스의 과제 정보 중 자신의 이름이 등록된 과제들을 모두 추가해도록 해줍니다.
-                        if (quest!!.userName.equals(App.name) && quest!!.dayOfWeek.equals(ForDayOfWeek2)&&dateForGet[2].equals(ForDate.toString())) {
+                        if (quest!!.userName.equals(App.name) && quest!!.dayOfWeek.equals(ForDayOfWeek2)&&dateForGet[2].equals(ForDate)) {
                             App.questList.add(quest)
                         }
                     }
