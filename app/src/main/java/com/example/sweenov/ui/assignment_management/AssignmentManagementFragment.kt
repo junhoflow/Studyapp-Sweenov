@@ -216,11 +216,8 @@ fun datesetting(){
                             App.questList.add(quest)
                         }
                     }
-
                 }
-
             })
-
         }
 
 

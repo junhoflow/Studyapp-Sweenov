@@ -1,6 +1,7 @@
 package com.example.sweenov.ui.setting
 
 import android.content.Context.VIBRATOR_SERVICE
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.sweenov.R
+import com.example.sweenov.loginWithName
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 
@@ -63,8 +65,23 @@ class SettingFragment : Fragment() {
             }
 
         }
+        //val email = findViewById(R.id.btnemail) as TextView
+        email_button.setOnClickListener {
+            val email = Intent(Intent.ACTION_SEND)
+            email.type = "plain/text"
+            val address =
+                arrayOf("kgu010@naver.com")
+            email.putExtra(Intent.EXTRA_EMAIL, address)
 
+            email.putExtra(Intent.EXTRA_SUBJECT, "제목이 들어갈 부분")
+            email.putExtra(Intent.EXTRA_TEXT, "건의사항을 입력해 주세요")
+            startActivity(email)
+        }
 
+        logout_button.setOnClickListener{
+            val intent1 = Intent(context, loginWithName::class.java)
+            startActivity(intent1)
+        }
 
 
     }
