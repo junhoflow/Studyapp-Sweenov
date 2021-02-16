@@ -36,7 +36,7 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
         holder.setItem(profiles)
         holder.btnd.setOnClickListener {//리사이클러뷰(과제 목록 창)에 있는 과제 삭제 버튼을 선택하면 실행되는 곳
 
-            deleteTask(App.name, holder.ForSubName.text.toString(), holder.ForAssName.text.toString())
+            deleteTask(App.name, holder.ForDeadLine.text.toString(),holder.ForClosingTime.text.toString(), holder.ForAssName.text.toString())
 
 
             Toast.makeText(context, "과제 ${holder.ForAssName.text} 가 제거되었습니다", Toast.LENGTH_LONG).show()
@@ -48,9 +48,9 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
 
     }
 
-    fun deleteTask(userName: String, subjectName:String, assignmentName : String){
+    fun deleteTask(userName: String, deadLine:String, closingTime:String,assignmentName : String){
 //필요한 것 = 업애려고하는 과제의 이름과 그 과제를 할당받은 팔로워의 이름
-        var stringForData = "$subjectName-$assignmentName"
+        var stringForData = "$deadLine-$closingTime-$assignmentName"
         FirebaseDatabase.getInstance().getReference().child(userName).child(stringForData).removeValue()
     }
 
@@ -60,15 +60,17 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
 class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
     var btnd = itemView?.findViewById<Button>(R.id.buttonForDelete)
     //val layoutQuest = itemView?.findViewById<LinearLayout>(R.id.layoutQuest)
+    val ForDeadLine= itemView?.findViewById<TextView>(R.id.deadline)
+    val ForClosingTime = itemView?.findViewById<TextView>(R.id.closingTime)
     val ForSubName =itemView?.findViewById<TextView>(R.id.subname)
     val ForAssName = itemView?.findViewById<TextView>(R.id.assname)
     fun setItem(Tasks: Tasks){
-
+        //if(Tasks.closingTime != " ")
+            itemView.closingTime.text = Tasks.closingTime
         itemView.subname.text = Tasks.subjectName
         itemView.assname.text = Tasks.assignmentName
         itemView.deadline.text = Tasks.deadLine
 
     }
-
 
 }

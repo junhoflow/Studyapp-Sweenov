@@ -154,34 +154,41 @@ fun datesetting(){
             //날짜 별로 과제를 가져오지는 못 합니다.
             var ForDayOfWeek2 : String = " "
             var databaseReference: DatabaseReference = FirebaseDatabase.getInstance().getReference(App.name)
-
+            var ForDate : Int = 0
             if(ForDayOfWeek == 1) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${sunday}"
+                ForDate = sunday
                 root.TodayINFO.text = root.sun.text.toString()
                 ForDayOfWeek2 = "sun"
             }
             else if(ForDayOfWeek == 2) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${monday}"
+                ForDate = monday
                 root.TodayINFO.text = root.mon.text.toString()
                 ForDayOfWeek2 = "mon"}
             else if(ForDayOfWeek == 3) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${tueday}"
+                ForDate = tueday
                 root.TodayINFO.text = root.tue.text.toString()
                 ForDayOfWeek2 = "tue"}
             else if(ForDayOfWeek == 4) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${wedday}"
+                ForDate = wedday
                 root.TodayINFO.text = root.wed.text.toString()
                 ForDayOfWeek2 = "wed"}
             else if(ForDayOfWeek == 5) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${thuday}"
+                ForDate = thuday
                 root.TodayINFO.text = root.thu.text.toString()
                 ForDayOfWeek2 = "thu"}
             else if(ForDayOfWeek == 6) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${friday}"
+                ForDate = friday
                 root.TodayINFO.text = root.fri.text.toString()
                 ForDayOfWeek2 = "fri"}
             else if(ForDayOfWeek == 7) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${satday}"
+                ForDate = satday
                 root.TodayINFO.text = root.sat.text.toString()
                 ForDayOfWeek2 = "sat"}
 
@@ -196,8 +203,9 @@ fun datesetting(){
 
                     for (dataSnapShot: DataSnapshot in snapshot.children) {
                         val quest = dataSnapShot.getValue(Tasks::class.java)
+                        val dateForGet = quest!!.deadLine.split("-").toTypedArray()
                         //여기서 파이어베이스의 과제 정보 중 자신의 이름이 등록된 과제들을 모두 추가해도록 해줍니다.
-                        if (quest!!.userName.equals(App.name) && quest!!.dayOfWeek.equals(ForDayOfWeek2)) {
+                        if (quest!!.userName.equals(App.name) && quest!!.dayOfWeek.equals(ForDayOfWeek2)&&dateForGet[2].equals(ForDate.toString())) {
                             App.questList.add(quest)
                         }
                     }

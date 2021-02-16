@@ -38,16 +38,14 @@
 
         <TextView
             android:id="@+id/deadline"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
+            android:layout_width="119dp"
+            android:layout_height="19dp"
             android:text="210111 12:30"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/assname"
             app:layout_constraintEnd_toStartOf="@+id/buttonForDelete"
-            app:layout_constraintTop_toTopOf="@+id/assname"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/assname"
@@ -73,5 +71,17 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/closingTime"
+            android:layout_width="119dp"
+            android:layout_height="19dp"
+            android:text=" "
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonForDelete"
+            app:layout_constraintTop_toBottomOf="@+id/deadline" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

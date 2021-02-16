@@ -121,7 +121,7 @@ class AdditionFragment : Fragment() {
     private fun registerTask(userName: String, subjectName: String, assignmentName: String, deadLine: String, closingTime:String) {
         //이곳은 파이어베이스에 과제 정보를 추가해주는 함수입니다.
 
-        var stringForData = "$deadLine-$closingTime"
+        var stringForData = "$deadLine-$closingTime-$assignmentName"
 
         val dateArray = deadLine.split("-").toTypedArray()
         val cal = Calendar.getInstance()
@@ -149,7 +149,7 @@ class AdditionFragment : Fragment() {
         hashMap.put("subjectName", subjectName)         // subjectName이라는 틀을 만들고 그 안에 인자로 받은 과목 명 값을 넣어 줍니다.
         hashMap.put("assignmentName", assignmentName)   // assignmentName이라는 틀을 만들고 그 안에 인자로 받은 과제 제목 값을 넣어 줍니다.
         hashMap.put("deadLine", deadLine)               // deadLine이라는 틀을 만들고 그 안에 인자로 받은 마감일 정보를 넣어 줍니다.
-        hashMap.put("closingTIme", closingTime)         // closingTIme이라는 틀을 만들고 그 안에 인자로 받은 마감시간 정보를 넣어 줍니다.
+        hashMap.put("closingTime", closingTime)         // closingTIme이라는 틀을 만들고 그 안에 인자로 받은 마감시간 정보를 넣어 줍니다.
         hashMap.put("userName", userName)               // userName이라는 틀을 만들고 그 안에 인자로 받은 사용자 이름 값을 넣어 줍니다.
         hashMap.put("dayOfWeek", dayOfWeekString)
 
