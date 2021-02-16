@@ -20,7 +20,6 @@ import java.util.*
 
 class AdditionFragment : Fragment() {
 
-
     private lateinit var databaseReference: DatabaseReference
 
     override fun onCreateView(

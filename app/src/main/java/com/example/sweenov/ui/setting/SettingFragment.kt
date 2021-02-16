@@ -40,10 +40,16 @@ class SettingFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        alarmsetting_btn.setOnClickListener{
-            val intent1 = Intent(context, AlarmSetting::class.java)
-            startActivity(intent1)
+        isAlarm_switch.setOnCheckedChangeListener{_, isChecked ->
+            val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
+            val vibrationEffect = VibrationEffect.createOneShot(100, 50)
+            if(isChecked){
+                vibrator.vibrate(vibrationEffect)
+                Toast.makeText(activity, "알람 ON!", Toast.LENGTH_LONG).show()
+            }else{
+                vibrator.vibrate(vibrationEffect)
+                Toast.makeText(activity, "알람 OFF!", Toast.LENGTH_LONG).show()
+            }
         }
 
 

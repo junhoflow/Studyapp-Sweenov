@@ -22,10 +22,10 @@
 
         <TextView
             android:id="@+id/subname"
-            android:layout_width="95dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
+            android:layout_width="135dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:text="객체지향프로그래밍"
             android:textColor="#000000"
             android:textSize="14sp"
@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/deadline"
-            android:layout_width="119dp"
+            android:layout_width="103dp"
             android:layout_height="19dp"
             android:text="210111 12:30"
             android:textColor="#000000"
@@ -74,8 +74,8 @@
 
         <TextView
             android:id="@+id/closingTime"
-            android:layout_width="119dp"
-            android:layout_height="19dp"
+            android:layout_width="103dp"
+            android:layout_height="17dp"
             android:text=" "
             android:textColor="#000000"
             android:textSize="14sp"

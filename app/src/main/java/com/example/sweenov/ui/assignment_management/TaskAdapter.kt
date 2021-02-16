@@ -45,7 +45,6 @@ class TaskAdapter(val context: Context, val list:ArrayList<Tasks>): RecyclerView
 
         }
 
-
     }
 
     fun deleteTask(userName: String, deadLine:String, closingTime:String,assignmentName : String){
