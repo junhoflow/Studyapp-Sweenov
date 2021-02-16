@@ -8,7 +8,6 @@ import java.util.*
 
 class loginWithName : AppCompatActivity() {
     //로그인 창을 위한 액티비티
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_with_name)

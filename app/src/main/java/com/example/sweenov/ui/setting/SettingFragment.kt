@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.sweenov.R
 import kotlinx.android.synthetic.main.fragment_setting.*
 
+
 class SettingFragment : Fragment() {
 
     private lateinit var settingViewModel: SettingViewModel

@@ -216,7 +216,7 @@ fun datesetting(){
 
         }
 
-        //root.date.text = timeGenerator()
+
 
         getTasksList(App.DayQuest)
         //파이어베이스에서 과제 리스트 데이터를 받아와서 앱의 전역 변수인 App.questList에 넣어주는 함수
