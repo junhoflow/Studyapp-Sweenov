@@ -157,38 +157,45 @@ fun datesetting(){
             var ForDate : String = ""
             if(ForDayOfWeek == 1) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${sunday}"
-                ForDate = sunday
+                val dayForGet = sunday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.sun.text.toString()
                 ForDayOfWeek2 = "sun"
             }
             else if(ForDayOfWeek == 2) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${monday}"
-                ForDate = monday
+                val dayForGet = monday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.mon.text.toString()
                 ForDayOfWeek2 = "mon"}
             else if(ForDayOfWeek == 3) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${tueday}"
-                ForDate = tueday
+                val dayForGet = tueday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.tue.text.toString()
                 ForDayOfWeek2 = "tue"}
             else if(ForDayOfWeek == 4) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${wedday}"
-                ForDate = wedday
+                val dayForGet = wedday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.wed.text.toString()
                 ForDayOfWeek2 = "wed"}
             else if(ForDayOfWeek == 5) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${thuday}"
-                ForDate = thuday
+                val dayForGet = thuday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.thu.text.toString()
                 ForDayOfWeek2 = "thu"}
             else if(ForDayOfWeek == 6) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${friday}"
-                ForDate = friday
+                val dayForGet = friday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.fri.text.toString()
                 ForDayOfWeek2 = "fri"}
             else if(ForDayOfWeek == 7) {
                 root.date.text = "${dateArray[0]}-${dateArray[1]}-${satday}"
-                ForDate = satday
+                val dayForGet = satday.split(" ").toTypedArray()
+                ForDate = dayForGet[0]
                 root.TodayINFO.text = root.sat.text.toString()
                 ForDayOfWeek2 = "sat"}
 
