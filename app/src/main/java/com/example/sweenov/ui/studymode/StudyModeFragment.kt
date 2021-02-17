@@ -3,6 +3,8 @@ package com.example.sweenov.ui.studymode
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Handler
+import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,7 @@ import com.example.sweenov.R
 import com.example.sweenov.ui.assignment_management.TaskAdapter
 import kotlinx.android.synthetic.main.fragment_a_m.view.*
 import kotlinx.android.synthetic.main.fragment_studymode.view.*
+import kotlin.concurrent.thread
 
 class StudyModeFragment : Fragment() {
 
@@ -84,6 +87,51 @@ class StudyModeFragment : Fragment() {
                 App.m3.pause()
             }
         })
+
+        val minute = String.format("%02d", App.total/60)
+        val second = String.format("%02d", App.total%60)
+        root.textTimer.text = "$minute:$second"
+
+        val handler = object : Handler() {
+            override fun handleMessage(msg: Message) {
+                val minute2 = String.format("%02d", App.total/60)
+                val second2 = String.format("%02d", App.total%60)
+                root.textTimer.text = "$minute2:$second2"
+            }
+
+        }
+        handler?.sendEmptyMessage(0)
+
+        val btnForStart = root.toggleButton4Time
+        btnForStart.setOnClickListener {
+            if(btnForStart.isChecked == true) {
+                App.started = true
+                App.ForTime = 1
+
+                thread(App.started == true) {
+                    while (App.started){
+                        Thread.sleep(1000)
+                        if(App.started){
+                            App.total = App.total + 1
+                            handler?.sendEmptyMessage(0)
+                        }
+                    }
+                }
+
+
+            }else{
+
+                App.started = false
+                App.ForTime = 0
+            }
+
+
+
+        }
+
+
+
+
         return root
     }
 }

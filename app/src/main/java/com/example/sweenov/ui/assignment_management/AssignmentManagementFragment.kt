@@ -19,6 +19,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_a_m.*
 import kotlinx.android.synthetic.main.fragment_a_m.view.*
 import java.util.*
+import kotlin.concurrent.thread
 
 class AssignmentManagementFragment : Fragment() {
     // 이곳은 과제 목록 창의 동작을 담당하는 프래그먼트 입니다.
@@ -150,6 +151,8 @@ fun datesetting(){
         App.m1.pause()
         App.m2.pause()
         App.m3.pause()
+
+        App.started = false
 
 
         fun getTasksList( ForDayOfWeek : Int) {

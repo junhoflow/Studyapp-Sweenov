@@ -40,6 +40,7 @@ class SettingFragment : Fragment() {
         App.m1.pause()
         App.m2.pause()
         App.m3.pause()
+        App.started = false
         return root
     }
 
