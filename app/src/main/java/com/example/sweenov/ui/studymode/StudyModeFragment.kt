@@ -32,7 +32,8 @@ class StudyModeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_studymode, container, false)
             
         App.m1 = MediaPlayer.create(context, R.raw.rain)
-        
+        App.m2 = MediaPlayer.create(context, R.raw.naturesound)
+
         val btn1 = root.toggleButton // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn1.setOnClickListener(View.OnClickListener {
             if(btn1.isChecked == true) {
@@ -42,6 +43,18 @@ class StudyModeFragment : Fragment() {
             }else{
 
                 App.m1.pause()
+            }
+        })
+
+        val btn2 = root.toggleButton2 // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
+        btn2.setOnClickListener(View.OnClickListener {
+            if(btn2.isChecked == true) {
+
+                App.m2.start()
+
+            }else{
+
+                App.m2.pause()
             }
         })
         return root

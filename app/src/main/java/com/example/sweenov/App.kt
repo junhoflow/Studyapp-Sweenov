@@ -17,5 +17,6 @@ class App : Application() {
         )
         var DayQuest : Int = 2
 var m1 : MediaPlayer = MediaPlayer()
+        var m2 : MediaPlayer = MediaPlayer()
     }
 }

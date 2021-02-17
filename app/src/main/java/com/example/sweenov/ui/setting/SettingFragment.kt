@@ -38,6 +38,7 @@ class SettingFragment : Fragment() {
         })
 
         App.m1.pause()
+        App.m2.pause()
         return root
     }
 
