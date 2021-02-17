@@ -146,8 +146,10 @@ fun datesetting(){
         //위 변수 root는 fragment_dashboard 라는 레이아웃과
         //지금 이 프래그먼트(DashboardFragment.kt)의 연결고리 역할을 하는 역할인 것 같습니다
         root.rv_Tasks.setHasFixedSize(true)//리사이클러뷰의 사이즈 설정과 관련된 코드인 것 같다
+        App.m0.pause()
         App.m1.pause()
         App.m2.pause()
+        App.m3.pause()
 
 
         fun getTasksList( ForDayOfWeek : Int) {

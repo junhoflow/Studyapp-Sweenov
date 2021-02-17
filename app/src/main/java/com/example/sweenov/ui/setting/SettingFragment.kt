@@ -36,9 +36,10 @@ class SettingFragment : Fragment() {
         settingViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
-
+        App.m0.pause()
         App.m1.pause()
         App.m2.pause()
+        App.m3.pause()
         return root
     }
 

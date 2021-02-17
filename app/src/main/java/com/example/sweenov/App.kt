@@ -16,7 +16,10 @@ class App : Application() {
             Tasks( "새로 고침 해주세요", " ", " ", " "," ", " ")
         )
         var DayQuest : Int = 2
-var m1 : MediaPlayer = MediaPlayer()
+
+        var m0 : MediaPlayer = MediaPlayer()
+        var m1 : MediaPlayer = MediaPlayer()
         var m2 : MediaPlayer = MediaPlayer()
+        var m3 : MediaPlayer = MediaPlayer()
     }
 }
