@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.assignment_management.AssignmentManagementFragment">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="과제가 없어요 ㅜ"
+        android:textColor="#9E62DA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rv_Tasks"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rv_Tasks"
+        app:layout_constraintTop_toTopOf="@+id/rv_Tasks" />
+
     <Button
         android:id="@+id/sat"
         android:layout_width="50dp"
@@ -128,9 +142,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_Tasks"
-        android:layout_width="397dp"
+        android:layout_width="395dp"
         android:layout_height="367dp"
-        android:background="#FFFFFF"
+        android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TodayINFO" />
@@ -139,8 +153,7 @@
         android:id="@+id/TodayINFO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="MONDAY"
         android:textColor="#000000"
@@ -173,8 +186,7 @@
         android:id="@+id/ButtonForUpdate"
         android:layout_width="46dp"
         android:layout_height="39dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
+        android:layout_marginEnd="8dp"
         android:background="#00000000"
         android:src="@drawable/refresh"
         app:layout_constraintBottom_toTopOf="@+id/rv_Tasks"
