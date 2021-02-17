@@ -1,6 +1,7 @@
 package com.example.sweenov
 
 import android.app.Application
+import android.media.MediaPlayer
 import com.example.sweenov.ui.assignment_management.Tasks
 
 class App : Application() {
@@ -15,6 +16,6 @@ class App : Application() {
             Tasks( "새로 고침 해주세요", " ", " ", " "," ", " ")
         )
         var DayQuest : Int = 2
-
+var m1 : MediaPlayer = MediaPlayer()
     }
 }
