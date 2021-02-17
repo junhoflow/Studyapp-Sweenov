@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,7 +44,7 @@ class StudyModeFragment : Fragment() {
         val btn0 = root.toggleButton0 // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn0.setOnClickListener(View.OnClickListener {
             if(btn0.isChecked == true) {
-
+                Toast.makeText(activity, "장작 타는 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m0.start()
 
             }else{
@@ -57,7 +58,7 @@ class StudyModeFragment : Fragment() {
         btn1.setOnClickListener(View.OnClickListener {
             if(btn1.isChecked == true) {
                 App.m1.start()
-
+                Toast.makeText(activity, "빗소리 ON!", Toast.LENGTH_LONG).show()
             }else{
                 App.m1.pause()
 
@@ -67,7 +68,7 @@ class StudyModeFragment : Fragment() {
         val btn2 = root.toggleButton2 // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn2.setOnClickListener(View.OnClickListener {
             if(btn2.isChecked == true) {
-
+                Toast.makeText(activity, "자연 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m2.start()
 
             }else{
@@ -79,7 +80,7 @@ class StudyModeFragment : Fragment() {
         val btn3 = root.toggleButton3 // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn3.setOnClickListener(View.OnClickListener {
             if(btn3.isChecked == true) {
-
+                Toast.makeText(activity, "사무실 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m3.start()
 
             }else{
@@ -104,7 +105,9 @@ class StudyModeFragment : Fragment() {
 
         val btnForStart = root.toggleButton4Time
         btnForStart.setOnClickListener {
+            
             if(btnForStart.isChecked == true) {
+                Toast.makeText(activity, "스탑워치가 켜졌어요!", Toast.LENGTH_LONG).show()
                 App.started = true
                 App.ForTime = 1
 
@@ -120,6 +123,7 @@ class StudyModeFragment : Fragment() {
 
 
             }else{
+                if(App.ForTime==1)Toast.makeText(activity, "스탑워치가 종료되었습니다.", Toast.LENGTH_LONG).show()
 
                 App.started = false
                 App.ForTime = 0
