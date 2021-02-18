@@ -47,6 +47,9 @@ class StudyModeFragment : Fragment() {
             if(btn0.isChecked == true) {
                 Toast.makeText(activity, "장작 타는 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m0.start()
+                App.m0.setOnCompletionListener {
+                    App.m0.start()
+                }
 
             }else{
 
@@ -58,8 +61,11 @@ class StudyModeFragment : Fragment() {
         val btn1 = root.toggleButton // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn1.setOnClickListener(View.OnClickListener {
             if(btn1.isChecked == true) {
-                App.m1.start()
                 Toast.makeText(activity, "빗소리 ON!", Toast.LENGTH_LONG).show()
+                App.m1.start()
+                App.m1.setOnCompletionListener {
+                    App.m1.start()
+                }
             }else{
                 App.m1.pause()
 
@@ -71,6 +77,9 @@ class StudyModeFragment : Fragment() {
             if(btn2.isChecked == true) {
                 Toast.makeText(activity, "자연 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m2.start()
+                App.m2.setOnCompletionListener {
+                    App.m2.start()
+                }
 
             }else{
 
@@ -83,6 +92,9 @@ class StudyModeFragment : Fragment() {
             if(btn3.isChecked == true) {
                 Toast.makeText(activity, "사무실 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m3.start()
+                App.m3.setOnCompletionListener {
+                    App.m3.start()
+                }
 
             }else{
 
@@ -110,6 +122,7 @@ class StudyModeFragment : Fragment() {
         btnForStart.setOnClickListener {
             
             if(btnForStart.isChecked == true) {
+
                 root.layout.setBackgroundColor(Color.BLACK)
                 root.todayTimer.setTextColor(Color.WHITE)
                 Toast.makeText(activity, "스터디 모드 ON!", Toast.LENGTH_LONG).show()

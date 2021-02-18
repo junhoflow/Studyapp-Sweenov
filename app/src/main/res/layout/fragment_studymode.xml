@@ -24,10 +24,10 @@
 
     <ToggleButton
         android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/my_toggle1"
 
         android:text="ToggleButton"
@@ -36,10 +36,10 @@
 
     <ToggleButton
         android:id="@+id/toggleButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/my_toggle2"
 
         android:text="ToggleButton"
@@ -48,10 +48,10 @@
 
     <ToggleButton
         android:id="@+id/toggleButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/my_toggle3"
 
         android:text="ToggleButton"
@@ -60,8 +60,8 @@
 
     <ToggleButton
         android:id="@+id/toggleButton0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="135dp"
         android:background="@drawable/my_toggle0"
