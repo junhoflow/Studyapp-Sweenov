@@ -1,6 +1,7 @@
 package com.example.sweenov.ui.studymode
 
 import android.content.Intent
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -88,16 +89,18 @@ class StudyModeFragment : Fragment() {
                 App.m3.pause()
             }
         })
-
+        val hour = String.format("%02d", App.total/3600)
         val minute = String.format("%02d", App.total/60)
         val second = String.format("%02d", App.total%60)
-        root.textTimer.text = "$minute:$second"
+        root.textTimer.text = "$hour:$minute:$second"
 
         val handler = object : Handler() {
             override fun handleMessage(msg: Message) {
+                val hour2 = String.format("%02d", App.total/3600)
                 val minute2 = String.format("%02d", App.total/60)
                 val second2 = String.format("%02d", App.total%60)
-                root.textTimer.text = "$minute2:$second2"
+
+                root.textTimer.text = "$hour2:$minute2:$second2"
             }
 
         }
@@ -107,7 +110,9 @@ class StudyModeFragment : Fragment() {
         btnForStart.setOnClickListener {
             
             if(btnForStart.isChecked == true) {
-                Toast.makeText(activity, "스탑워치가 켜졌어요!", Toast.LENGTH_LONG).show()
+                root.layout.setBackgroundColor(Color.BLACK)
+                root.todayTimer.setTextColor(Color.WHITE)
+                Toast.makeText(activity, "스터디 모드 ON!", Toast.LENGTH_LONG).show()
                 App.started = true
                 App.ForTime = 1
 
@@ -123,8 +128,9 @@ class StudyModeFragment : Fragment() {
 
 
             }else{
-                if(App.ForTime==1)Toast.makeText(activity, "스탑워치가 종료되었습니다.", Toast.LENGTH_LONG).show()
-
+                if(App.ForTime==1)Toast.makeText(activity, "스터디모드가 종료되었습니다.", Toast.LENGTH_LONG).show()
+                root.layout.setBackgroundColor(Color.WHITE)
+                root.todayTimer.setTextColor(Color.parseColor("#AD010002"))
                 App.started = false
                 App.ForTime = 0
             }

@@ -43,7 +43,7 @@ class SettingFragment : Fragment() {
         App.started = false
         if(App.ForTime == 1){
             App.ForTime = 0
-            Toast.makeText(activity, "스탑워치가 종료되었습니다.", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "스터디모드가 종료되었습니다.", Toast.LENGTH_LONG).show()
         }
 
 
