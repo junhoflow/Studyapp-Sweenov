@@ -31,6 +31,8 @@
         android:background="@drawable/my_toggle1"
 
         android:text="ToggleButton"
+        android:textOff="  "
+        android:textOn="  "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton0" />
 
@@ -43,6 +45,8 @@
         android:background="@drawable/my_toggle2"
 
         android:text="ToggleButton"
+        android:textOff="  "
+        android:textOn="  "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
@@ -55,6 +59,8 @@
         android:background="@drawable/my_toggle3"
 
         android:text="ToggleButton"
+        android:textOff="  "
+        android:textOn="  "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
 
@@ -63,13 +69,15 @@
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="135dp"
-        android:background="@drawable/my_toggle0"
 
+        android:layout_marginTop="8dp"
+        android:background="@drawable/my_toggle0"
         android:text="ToggleButton"
+        android:textOff="  "
+        android:textOn=" "
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textWhite" />
 
     <TextView
         android:id="@+id/textTimer"
@@ -96,5 +104,17 @@
         android:textColor="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTimer" />
+
+    <TextView
+        android:id="@+id/textWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:text="White Noise"
+        android:textColor="#AD010002"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

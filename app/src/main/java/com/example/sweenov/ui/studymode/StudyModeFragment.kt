@@ -122,7 +122,7 @@ class StudyModeFragment : Fragment() {
         btnForStart.setOnClickListener {
             
             if(btnForStart.isChecked == true) {
-
+                root.textWhite.setTextColor(Color.WHITE)
                 root.layout.setBackgroundColor(Color.BLACK)
                 root.todayTimer.setTextColor(Color.WHITE)
                 Toast.makeText(activity, "스터디 모드 ON!", Toast.LENGTH_LONG).show()
@@ -144,6 +144,7 @@ class StudyModeFragment : Fragment() {
                 if(App.ForTime==1)Toast.makeText(activity, "스터디모드가 종료되었습니다.", Toast.LENGTH_LONG).show()
                 root.layout.setBackgroundColor(Color.WHITE)
                 root.todayTimer.setTextColor(Color.parseColor("#AD010002"))
+                root.textWhite.setTextColor(Color.parseColor("#AD010002"))
                 App.started = false
                 App.ForTime = 0
             }
