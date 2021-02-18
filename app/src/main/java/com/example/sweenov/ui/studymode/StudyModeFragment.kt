@@ -102,16 +102,17 @@ class StudyModeFragment : Fragment() {
             }
         })
         val hour = String.format("%02d", App.total/3600)
-        val minute = String.format("%02d", App.total/60)
+        val minute = String.format("%02d", App.total2/60)
         val second = String.format("%02d", App.total%60)
+        if(minute == "60") {App.total2 = 0}
         root.textTimer.text = "$hour:$minute:$second"
 
         val handler = object : Handler() {
             override fun handleMessage(msg: Message) {
                 val hour2 = String.format("%02d", App.total/3600)
-                val minute2 = String.format("%02d", App.total/60)
+                val minute2 = String.format("%02d", App.total2/60)
                 val second2 = String.format("%02d", App.total%60)
-
+                if(minute2 == "60") App.total2 = 0
                 root.textTimer.text = "$hour2:$minute2:$second2"
             }
 
@@ -134,6 +135,7 @@ class StudyModeFragment : Fragment() {
                         Thread.sleep(1000)
                         if(App.started){
                             App.total = App.total + 1
+                            App.total2 = App.total2 + 1
                             handler?.sendEmptyMessage(0)
                         }
                     }

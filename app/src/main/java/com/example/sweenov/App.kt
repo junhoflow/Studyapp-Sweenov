@@ -22,6 +22,7 @@ class App : Application() {
         var m2 : MediaPlayer = MediaPlayer()
         var m3 : MediaPlayer = MediaPlayer()
         var total = 0
+        var total2 = 0
         var started = false
         var ForTime = 0
     }
