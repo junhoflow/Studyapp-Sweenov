@@ -20,11 +20,13 @@ import com.example.sweenov.ForLoading
 import com.example.sweenov.R
 import com.example.sweenov.ui.assignment_management.TaskAdapter
 import kotlinx.android.synthetic.main.fragment_a_m.view.*
+import kotlinx.android.synthetic.main.fragment_studymode.*
 import kotlinx.android.synthetic.main.fragment_studymode.view.*
 import kotlin.concurrent.thread
 
 class StudyModeFragment : Fragment() {
-
+    val DB_NAME = "sqlite.sql"
+    val DB_VERSION = 1
     private lateinit var studyModeViewModel: StudyModeViewModel
 
     override fun onCreateView(
@@ -35,6 +37,24 @@ class StudyModeFragment : Fragment() {
         studyModeViewModel =
                 ViewModelProvider(this).get(StudyModeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_studymode, container, false)
+
+
+
+        val helper = SqliteHelper(context, DB_NAME, DB_VERSION)
+        val content = App.name
+        val time = App.total
+        val memo = Memo(null, content, time)
+
+        helper.insertMemo(memo)
+
+        App.total = helper.selectMemo()
+
+        val hour = String.format("%02d", App.total/3600)
+        val minute = String.format("%02d", App.total2/60)
+        val second = String.format("%02d", App.total%60)
+        if(minute == "60") {App.total2 = 0}
+
+        root.textTimer.text = "$hour:$minute:$second"
 
         App.m0 = MediaPlayer.create(context, R.raw.firesound2)
         App.m1 = MediaPlayer.create(context, R.raw.rain)
@@ -101,11 +121,7 @@ class StudyModeFragment : Fragment() {
                 App.m3.pause()
             }
         })
-        val hour = String.format("%02d", App.total/3600)
-        val minute = String.format("%02d", App.total2/60)
-        val second = String.format("%02d", App.total%60)
-        if(minute == "60") {App.total2 = 0}
-        root.textTimer.text = "$hour:$minute:$second"
+
 
         val handler = object : Handler() {
             override fun handleMessage(msg: Message) {
@@ -117,7 +133,7 @@ class StudyModeFragment : Fragment() {
             }
 
         }
-        handler?.sendEmptyMessage(0)
+        //handler?.sendEmptyMessage(0)
 
         val btnForStart = root.toggleButton4Time
         btnForStart.setOnClickListener {
@@ -130,12 +146,26 @@ class StudyModeFragment : Fragment() {
                 App.started = true
                 App.ForTime = 1
 
+                val content = App.name
+                val time = App.total
+                val memo = Memo(null, content, time)
+
+
+                helper.updateMemo(memo)
+
+
                 thread(App.started == true) {
                     while (App.started){
                         Thread.sleep(1000)
                         if(App.started){
                             App.total = App.total + 1
                             App.total2 = App.total2 + 1
+                            val content = App.name
+                            val time = App.total
+                            val memo = Memo(null, content, time)
+
+
+                            helper.updateMemo(memo)
                             handler?.sendEmptyMessage(0)
                         }
                     }
@@ -149,6 +179,12 @@ class StudyModeFragment : Fragment() {
                 root.textWhite.setTextColor(Color.parseColor("#AD010002"))
                 App.started = false
                 App.ForTime = 0
+                val content = App.name
+                val time = App.total
+                val memo = Memo(null, content, time)
+
+
+                helper.updateMemo(memo)
             }
 
 

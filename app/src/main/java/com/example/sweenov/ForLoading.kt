@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Toast
 import com.example.sweenov.ui.assignment_management.Tasks
+import com.example.sweenov.ui.studymode.Memo
 import com.google.firebase.database.*
 
 class ForLoading : AppCompatActivity() {

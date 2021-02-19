@@ -11,7 +11,7 @@ class App : Application() {
     companion object
     {
 
-        var name: String = ""
+        var name: String = "base"
         var questList : ArrayList<Tasks> = arrayListOf(//Tasks 형식으로 전역 변수 questList에 과목 정보를 저장할 수 있도록 선언
             Tasks( "새로 고침 해주세요", " ", " ", " "," ", " ")
         )
@@ -21,7 +21,7 @@ class App : Application() {
         var m1 : MediaPlayer = MediaPlayer()
         var m2 : MediaPlayer = MediaPlayer()
         var m3 : MediaPlayer = MediaPlayer()
-        var total = 0
+        var total:Long = 0
         var total2 = 0
         var started = false
         var ForTime = 0
