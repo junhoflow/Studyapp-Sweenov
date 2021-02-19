@@ -11,7 +11,10 @@ class loginWithName : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_with_name)
-
+        App.m0.pause()
+        App.m1.pause()
+        App.m2.pause()
+        App.m3.pause()
 
         buttonForLogin.setOnClickListener{//로그인이라고 써져 있는 버튼을 누르면 실행되는 곳
             App.name = nameForLogin.text.toString() //로그인을 할 때 자신의 이름을 입력하면 그 이름을 전역함수 App.name에 대입해 줍니다.

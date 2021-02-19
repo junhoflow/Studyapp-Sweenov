@@ -15,7 +15,10 @@ class ForLoading : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_for_loading)
-
+        App.m0.pause()
+        App.m1.pause()
+        App.m2.pause()
+        App.m3.pause()
         //getTasksList()
 
         //아래 코드를 통해서 로딩 액티비티에서 메인 액티비티로 넘어가게 해준다
