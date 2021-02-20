@@ -65,7 +65,8 @@ class StudyModeFragment : Fragment() {
                 }
 
             }else{
-                root.textWN.setTextColor(Color.parseColor("#AD010002"))
+                if(App.ForTime == 1){root.textWN.setTextColor(Color.WHITE)}
+                else{root.textWN.setTextColor(Color.parseColor("#AD010002"))}
                 App.m0.pause()
             }
         })
@@ -82,7 +83,8 @@ class StudyModeFragment : Fragment() {
                 }
             }else{
                 App.m1.pause()
-                root.textWN.setTextColor(Color.parseColor("#AD010002"))
+                if(App.ForTime == 1){root.textWN.setTextColor(Color.WHITE)}
+                else{root.textWN.setTextColor(Color.parseColor("#AD010002"))}
             }
         })
 
@@ -97,7 +99,8 @@ class StudyModeFragment : Fragment() {
                 }
 
             }else{
-                root.textWN.setTextColor(Color.parseColor("#AD010002"))
+                if(App.ForTime == 1){root.textWN.setTextColor(Color.WHITE)}
+                else{root.textWN.setTextColor(Color.parseColor("#AD010002"))}
                 App.m2.pause()
             }
         })
@@ -105,6 +108,7 @@ class StudyModeFragment : Fragment() {
         val btn3 = root.toggleButton3 // btn1에 과제목록 레이아웃에 있는 월요일 버튼을 대입해 줍니다.
         btn3.setOnClickListener(View.OnClickListener {
             if(btn3.isChecked == true) {
+
                 root.textWN.setTextColor(Color.parseColor("#9E62DA"))
                 Toast.makeText(activity, "사무실 소리 ON!", Toast.LENGTH_LONG).show()
                 App.m3.start()
@@ -113,7 +117,8 @@ class StudyModeFragment : Fragment() {
                 }
 
             }else{
-                root.textWN.setTextColor(Color.parseColor("#AD010002"))
+                if(App.ForTime == 1){root.textWN.setTextColor(Color.WHITE)}
+                else{root.textWN.setTextColor(Color.parseColor("#AD010002"))}
                 App.m3.pause()
             }
         })

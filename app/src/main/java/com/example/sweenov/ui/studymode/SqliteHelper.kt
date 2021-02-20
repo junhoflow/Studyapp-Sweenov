@@ -49,6 +49,7 @@ class SqliteHelper(context: Context?, name: String, version: Int): SQLiteOpenHel
 
         var content : String = ""
         var datetime:Long = 0
+        //val select = "select * from memo order by rowid desc limit 1"
         val select2 = "select * from memo WHERE content = '${App.name}'"
         val rd= readableDatabase
         val cursor = rd.rawQuery(select2, null)
