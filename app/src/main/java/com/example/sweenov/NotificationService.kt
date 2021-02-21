@@ -69,8 +69,8 @@ class NotificationService : IntentService("NotificationService") {
             var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val notifyIntent = Intent(this, ResultActivity::class.java)
 
-            val title = "스위노프 과제알람"
-            val message = "자료구조 4주차 강의 과제하기"
+            val title = App.notSubTitle
+            val message = App.notAssTitle
 
             notifyIntent.putExtra("title", title)
             notifyIntent.putExtra("message", message)
@@ -81,8 +81,8 @@ class NotificationService : IntentService("NotificationService") {
             val calendar = Calendar.getInstance()
             calendar.timeInMillis = timestamp
 
-
-            val pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+            var a : Int = System.currentTimeMillis().toInt()
+            val pendingIntent = PendingIntent.getActivity(context,a , notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
             val res = this.resources
             val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 

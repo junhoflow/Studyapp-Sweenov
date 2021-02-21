@@ -1,20 +1,22 @@
 package com.example.sweenov
 
+import android.app.AlarmManager
 import android.app.DatePickerDialog
+import android.app.PendingIntent
 import android.app.TimePickerDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.Navigation
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_login_with_name.*
 import kotlinx.android.synthetic.main.fragment_addition.*
-import kotlinx.android.synthetic.main.list_item.*
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -87,8 +89,24 @@ class AdditionFragment : Fragment() {
 
 
                             Toast.makeText(activity, "과제가 추가되었습니다.", Toast.LENGTH_SHORT).show() //과제가 추가되었다는 메시지를 출력
-                            val action = AdditionFragmentDirections.actionAdditionFragmentToNavigationDashboard()
-                            Navigation.findNavController(view).navigate(action)
+
+
+                            App.notSubTitle = inputSubject
+                            App.notAssTitle = inputTitle
+                            App.ForAlarm = inputTime.toInt()
+                            //intent1.putExtra("subject",inputSubject)
+                            //intent1.putExtra("Asstitle",inputTitle)
+                            //intent1.putExtra("subject",inputSubject)
+                            //var sec = inputTime.toInt()
+
+                            val intent1 = Intent(context, ForAlarm::class.java)
+
+
+
+                            startActivity(intent1)
+
+                            //val action = AdditionFragmentDirections.actionAdditionFragmentToNavigationDashboard()
+                            //Navigation.findNavController(view).navigate(action)
                         }
                         else
                         {

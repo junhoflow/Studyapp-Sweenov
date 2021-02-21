@@ -21,9 +21,15 @@ class App : Application() {
         var m1 : MediaPlayer = MediaPlayer()
         var m2 : MediaPlayer = MediaPlayer()
         var m3 : MediaPlayer = MediaPlayer()
+        var mforalarm : MediaPlayer = MediaPlayer()
         var total:Long = 0
         var total2 = 0
         var started = false
         var ForTime = 0
+
+        var notSubTitle = "스위노프 과제알람"
+        var notAssTitle = "자료구조 4주차 강의 과제하기"
+        var ForAlarm = 5000
+        var ForAlarmWithTime = 0
     }
 }
