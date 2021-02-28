@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_addition.*
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class AdditionFragment : Fragment() {
@@ -60,7 +62,7 @@ class AdditionFragment : Fragment() {
             var min = calendar.get(Calendar.MINUTE)
 
             var listener = TimePickerDialog.OnTimeSetListener{
-                    _,i,i2 -> et_time.setText("${i}시 ${i2}분")
+                    _,i,i2 -> et_time.setText("${i}:${i2}")
             }
 
             var picker = TimePickerDialog(activity,android.R.style.Theme_Holo_Light_Dialog,
@@ -68,6 +70,7 @@ class AdditionFragment : Fragment() {
             picker.getWindow()?.setBackgroundDrawableResource(android.R.color.transparent);
             picker.show()
         }
+
 
         btn_add.setOnClickListener{
             val inputSubject = et_subject.text.toString()
@@ -93,11 +96,32 @@ class AdditionFragment : Fragment() {
 
                             App.notSubTitle = inputSubject
                             App.notAssTitle = inputTitle
-                            App.ForAlarm = inputTime.toInt()
+                            //App.ForAlarm = inputTime.toInt()
                             //intent1.putExtra("subject",inputSubject)
                             //intent1.putExtra("Asstitle",inputTitle)
                             //intent1.putExtra("subject",inputSubject)
                             //var sec = inputTime.toInt()
+
+                            //val dateArray = deadLine.split(":").toTypedArray()
+                            //val cal = Calendar.getInstance()
+                            //cal[dateArray[0].toInt(), dateArray[1].toInt() - 1] = dateArray[2].toInt()
+
+                            val TimeForAlarm = inputTime.split(":").toTypedArray()
+
+                            val current = LocalDateTime.now()
+                            val formatter = DateTimeFormatter.ofPattern("HH:mm")
+                            val formatted = current.format(formatter)
+                            val TimeForAlarm2 = formatted.split(":").toTypedArray()
+
+
+                            val a = TimeForAlarm[0].toInt() - TimeForAlarm2[0].toInt()
+                            val b = TimeForAlarm[1].toInt() - TimeForAlarm2[1].toInt()
+
+                            val aUp = Math.abs(a)*3600
+                            val bUp = Math.abs(b)*60
+
+                            App.ForAlarm = (aUp + bUp)*1000
+
 
                             val intent1 = Intent(context, ForAlarm::class.java)
 

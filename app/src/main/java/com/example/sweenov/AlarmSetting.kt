@@ -14,15 +14,15 @@ import kotlinx.android.synthetic.main.activity_alarmsetting.isAlarm_switch as is
 class AlarmSetting : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
 
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + App.ForAlarm //Set after 5 seconds from the current time.
-    private var mNotified = false
+    //private val mNotificationTime = Calendar.getInstance().timeInMillis + App.ForAlarm //Set after 5 seconds from the current time.
+    //private var mNotified = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarmsetting)
 
-        if (!mNotified) {
-            NotificationUtils().setNotification(mNotificationTime, this@AlarmSetting)
-        }
+        //if (!mNotified) {
+            //NotificationUtils().setNotification(mNotificationTime, this@AlarmSetting)
+        //}
 
         isAlarm_switch1.setOnCheckedChangeListener{ _, isChecked ->
             val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator

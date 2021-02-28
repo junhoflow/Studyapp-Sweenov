@@ -30,6 +30,7 @@ class App : Application() {
         var notSubTitle = "스위노프 과제알람"
         var notAssTitle = "자료구조 4주차 강의 과제하기"
         var ForAlarm = 5000
+        var ForAlarm2 = 5000
         var ForAlarmWithTime = 0
     }
 }
